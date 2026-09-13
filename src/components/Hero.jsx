@@ -108,6 +108,7 @@ const Hero = () => {
 
           {/* Thirukkural on Justice Banner Card (Multi-Language MUI Chips) */}
           <motion.div
+            className="kural-banner-card"
             style={{
               background: 'rgba(15, 23, 42, 0.85)',
               border: '1px solid rgba(212, 175, 55, 0.3)',
@@ -174,7 +175,7 @@ const Hero = () => {
             {/* Kural Content based on selected tab */}
             {kuralLangTab === 'ta' && (
               <>
-                <p style={{ fontFamily: '"Mukta Malar", serif', fontSize: '1.05rem', color: '#fff', fontWeight: 600, fontStyle: 'italic', lineHeight: 1.5, marginBottom: '6px' }}>
+                <p className="kural-verse-text" style={{ fontFamily: '"Mukta Malar", serif', fontSize: '1.05rem', color: '#fff', fontWeight: 600, fontStyle: 'italic', lineHeight: 1.5, marginBottom: '6px' }}>
                   "சமன்செய்து சீர்தூக்கும் கோல்போல் அமைந்தொருபால்<br />
                   கோடாமை சான்றோர்க்கு அணி."
                 </p>
@@ -186,7 +187,7 @@ const Hero = () => {
 
             {kuralLangTab === 'en' && (
               <>
-                <p style={{ fontSize: '0.98rem', color: '#fff', fontWeight: 600, fontStyle: 'italic', lineHeight: 1.5, marginBottom: '6px' }}>
+                <p className="kural-verse-text" style={{ fontSize: '0.98rem', color: '#fff', fontWeight: 600, fontStyle: 'italic', lineHeight: 1.5, marginBottom: '6px' }}>
                   "To stand like a balanced scale, uncurved by favor or prejudice, is the true ornament of the wise."
                 </p>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
@@ -197,7 +198,7 @@ const Hero = () => {
 
             {kuralLangTab === 'hi' && (
               <>
-                <p style={{ fontSize: '0.98rem', color: '#fff', fontWeight: 600, fontStyle: 'italic', lineHeight: 1.5, marginBottom: '6px' }}>
+                <p className="kural-verse-text" style={{ fontSize: '0.98rem', color: '#fff', fontWeight: 600, fontStyle: 'italic', lineHeight: 1.5, marginBottom: '6px' }}>
                   "समान रूप से तौलने वाले तराजू की भांति, किसी एक ओर झुके बिना निष्पक्ष रहना ही ज्ञानियों का आभूषण है।"
                 </p>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
@@ -208,7 +209,7 @@ const Hero = () => {
 
             {kuralLangTab === 'te' && (
               <>
-                <p style={{ fontSize: '0.98rem', color: '#fff', fontWeight: 600, fontStyle: 'italic', lineHeight: 1.5, marginBottom: '6px' }}>
+                <p className="kural-verse-text" style={{ fontSize: '0.98rem', color: '#fff', fontWeight: 600, fontStyle: 'italic', lineHeight: 1.5, marginBottom: '6px' }}>
                   "త్రాసువలె సమంగా తూచి, ఏ పక్కకీ తలవంచకుండా నిష్పాక్షికంగా ఉండటమే ప్రాజ్ఞులకు అలంకారం."
                 </p>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
@@ -219,7 +220,7 @@ const Hero = () => {
 
             {kuralLangTab === 'ml' && (
               <>
-                <p style={{ fontSize: '0.98rem', color: '#fff', fontWeight: 600, fontStyle: 'italic', lineHeight: 1.5, marginBottom: '6px' }}>
+                <p className="kural-verse-text" style={{ fontSize: '0.98rem', color: '#fff', fontWeight: 600, fontStyle: 'italic', lineHeight: 1.5, marginBottom: '6px' }}>
                   "തുലാസ്സുപോലെ സമമായി തൂക്കി, ഒരു വശത്തേക്കും ചായാതെ നിഷ്പക്ഷമായി നിലകൊള്ളുന്നതാണ് വിവേകികളുടെ അലങ്കാരം."
                 </p>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
@@ -256,6 +257,7 @@ const Hero = () => {
 
           {/* Executive Legal Philosophy Quote Box */}
           <div
+            className="advocate-quote-box"
             style={{
               background: 'rgba(212, 175, 55, 0.06)',
               borderLeft: '4px solid var(--gold-accent)',

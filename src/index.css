@@ -835,40 +835,62 @@ header {
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN MEDIA QUERIES (Mobile, Tablet, Laptop)
-   NOTE: Desktop layout (1200px and above) remains 100% unchanged!
+   SYSTEMATIC RESPONSIVE DESIGN MEDIA QUERIES (320px to 1279px)
+   CRITICAL RULE: Desktop layout (1280px and above) remains 100% UNTOUCHED!
    ========================================================================== */
 
-/* 1. Large Laptops / Small Desktops (1024px to 1199px) */
-@media (max-width: 1199px) {
+/* --------------------------------------------------------------------------
+   LAYOUT 1: Small Desktops & Laptops (1024px to 1279px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) and (max-width: 1279px) {
     .container {
-        max-width: 960px;
-        padding: 0 1.25rem;
+        max-width: 1060px;
+        padding: 0 1.5rem;
+    }
+    .hero {
+        padding: 5rem 0 4rem;
     }
     .hero-grid {
         grid-template-columns: 1.1fr 0.9fr;
-        gap: 2.5rem;
+        gap: 3rem;
+    }
+    .hero-headline {
+        font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    }
+    .advocate-card {
+        padding: 2rem 1.75rem;
+    }
+    .practice-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    .pillars-list {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.25rem;
     }
     .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+        grid-template-columns: 1.1fr 0.9fr 1.1fr 1.2fr;
+        gap: 1.75rem;
     }
 }
 
-/* 2. Tablets & Small Laptops (768px to 1023px) */
-@media (max-width: 1023px) {
+/* --------------------------------------------------------------------------
+   LAYOUT 2: Tablets & Small Laptops (768px to 1023px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1023px) {
     .container {
+        max-width: 720px;
         padding: 0 1.25rem;
     }
     .top-bar-wrapper {
         justify-content: center;
-        gap: 12px;
+        gap: 14px;
     }
     .desktop-cta {
-        display: none;
+        display: none !important;
     }
     .nav-links {
-        display: none;
+        display: none !important;
     }
     .mobile-menu-toggle {
         display: flex !important;
@@ -880,13 +902,30 @@ header {
     .hero-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
+        text-align: center;
+    }
+    .hero-badge {
+        margin: 0 auto 1.25rem;
+    }
+    .hero-headline {
+        font-size: 2.5rem;
     }
     .hero-description {
         max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-actions {
+        justify-content: center;
+    }
+    .kural-banner-card {
+        padding: 1.2rem 1.25rem !important;
+        text-align: left;
     }
     .advocate-card {
         max-width: 520px;
         margin: 0 auto;
+        padding: 2rem 1.75rem;
     }
     .practice-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -896,20 +935,28 @@ header {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.25rem;
     }
+    .contact-box {
+        padding: 2.5rem 2rem;
+    }
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
 }
 
-/* 3. Mobile Devices (Portrait & Small Tablets: 480px to 767px) */
-@media (max-width: 767px) {
+/* --------------------------------------------------------------------------
+   LAYOUT 3: Standard Mobile Devices (480px to 767px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 480px) and (max-width: 767px) {
     .container {
-        padding: 0 1rem;
+        padding: 0 1.25rem;
     }
     .top-bar {
         font-size: 0.8rem;
-        padding: 6px 0;
+        padding: 8px 0;
     }
     .top-bar-wrapper {
         flex-direction: column;
@@ -921,6 +968,15 @@ header {
         flex-wrap: wrap;
         justify-content: center;
         gap: 12px;
+    }
+    .desktop-cta {
+        display: none !important;
+    }
+    .nav-links {
+        display: none !important;
+    }
+    .mobile-menu-toggle {
+        display: flex !important;
     }
     .navbar {
         padding: 0.9rem 0;
@@ -937,6 +993,11 @@ header {
     }
     .hero {
         padding: 3rem 0 2.5rem;
+        min-height: auto;
+    }
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.2rem;
     }
     .hero-badge {
         font-size: 0.75rem;
@@ -959,8 +1020,16 @@ header {
     .btn-call, .btn-whatsapp {
         width: 100%;
         justify-content: center;
-        padding: 12px 24px;
+        padding: 13px 24px;
         font-size: 0.95rem;
+    }
+    .kural-banner-card {
+        padding: 1.1rem 1.1rem !important;
+        margin-top: 1.5rem !important;
+    }
+    .kural-verse-text {
+        font-size: 0.96rem !important;
+        line-height: 1.45 !important;
     }
     .advocate-card {
         padding: 1.8rem 1.25rem;
@@ -977,6 +1046,10 @@ header {
     }
     .advocate-details h3 {
         font-size: 1.45rem;
+    }
+    .advocate-quote-box {
+        padding: 0.9rem 1rem !important;
+        font-size: 0.84rem !important;
     }
     .section-padding {
         padding: 3.5rem 0;
@@ -1030,19 +1103,140 @@ header {
     }
 }
 
-/* 4. Extra Small Mobile Screens (320px to 479px) */
+/* --------------------------------------------------------------------------
+   LAYOUT 4: Compact / Extra Small Mobile Devices (320px to 479px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 479px) {
+    .container {
+        padding: 0 0.85rem;
+    }
+    .top-bar-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        text-align: center;
+    }
+    .contact-quick {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+    }
+    .desktop-cta {
+        display: none !important;
+    }
+    .nav-links {
+        display: none !important;
+    }
+    .mobile-menu-toggle {
+        display: flex !important;
+    }
     .brand-text h1 {
-        font-size: 1rem;
+        font-size: 0.98rem;
     }
     .brand-text span {
         display: none;
     }
+    .hero {
+        padding: 2.5rem 0 2rem;
+        min-height: auto;
+    }
+    .hero-badge {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+    }
     .hero-headline {
-        font-size: 1.8rem;
+        font-size: 1.75rem;
+        line-height: 1.25;
+    }
+    .hero-description {
+        font-size: 0.92rem;
+        margin-bottom: 1.5rem;
+    }
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    .btn-call, .btn-whatsapp {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    .kural-banner-card {
+        padding: 1rem 0.85rem !important;
+        margin-top: 1.25rem !important;
+        border-radius: 14px !important;
+    }
+    .kural-verse-text {
+        font-size: 0.9rem !important;
+        line-height: 1.45 !important;
+    }
+    .advocate-card {
+        padding: 1.5rem 1rem;
+        border-radius: 16px;
+    }
+    .advocate-avatar-wrap {
+        width: 90px;
+        height: 90px;
+    }
+    .advocate-avatar {
+        font-size: 2.2rem;
+    }
+    .advocate-details h3 {
+        font-size: 1.3rem;
+    }
+    .advocate-quote-box {
+        padding: 0.75rem 0.85rem !important;
+        font-size: 0.8rem !important;
+        margin-top: 1rem !important;
+    }
+    .section-padding {
+        padding: 3rem 0;
     }
     .section-title {
         font-size: 1.6rem;
+    }
+    .practice-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .practice-card {
+        padding: 1.35rem 1rem;
+    }
+    .pillars-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .pillar-box {
+        padding: 1.25rem 1rem;
+    }
+    .contact-box {
+        padding: 1.75rem 1rem;
+        border-radius: 16px;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-input, .form-select, .form-textarea {
+        padding: 11px 14px;
+        font-size: 0.9rem;
+    }
+    .submit-btn {
+        padding: 13px 20px;
+        font-size: 0.9rem;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+    .map-container {
+        height: 180px;
+    }
+    .addr-card-header {
+        flex-wrap: wrap;
+        gap: 4px;
     }
 }
 
@@ -1087,4 +1281,6 @@ header {
 .mobile-nav-links a:hover {
     color: var(--gold-accent);
 }
+
+
 
