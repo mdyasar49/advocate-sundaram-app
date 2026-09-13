@@ -237,14 +237,6 @@ header {
     align-items: center;
 }
 
-@media (max-width: 968px) {
-    .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    .nav-links { display: none; }
-}
-
 .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -559,10 +551,6 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.25rem;
-}
-
-@media (max-width: 650px) {
-    .form-grid { grid-template-columns: 1fr; }
 }
 
 .form-group {
