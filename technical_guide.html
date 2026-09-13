@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <title>Advocate Sundaram Website - Technical Explanation & Infrastructure Guide</title>
+    <!-- Google Fonts for Perfect Tamil & English Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Mukta+Malar:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 12mm 12mm 12mm 12mm;
+        }
+
+        :root {
+            --navy-dark: #080d1a;
+            --navy-card: #0f172a;
+            --gold-primary: #d4af37;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --bg-light: #f8fafc;
+            --border-color: #cbd5e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Mukta Malar', 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            line-height: 1.45;
+            font-size: 12px;
+        }
+
+        .pdf-page {
+            width: 100%;
+            min-height: 270mm;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .page-break {
+            page-break-before: always;
+            break-before: page;
+        }
+
+        /* Header Banner */
+        .header-banner {
+            background-color: var(--navy-dark);
+            border: 2px solid var(--gold-primary);
+            border-radius: 10px;
+            padding: 14px 20px;
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .header-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-primary);
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .header-title {
+            font-family: 'Cinzel', 'Mukta Malar', serif;
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--gold-primary);
+            margin-bottom: 2px;
+        }
+
+        .header-subtitle {
+            font-size: 12px;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        /* Preview Link Box */
+        .preview-box {
+            background-color: #f0f9ff;
+            border: 1.5px solid #0284c7;
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .preview-label {
+            font-weight: 700;
+            color: #0369a1;
+            font-size: 12.5px;
+        }
+
+        .preview-url {
+            font-weight: 800;
+            color: #0284c7;
+            font-size: 13px;
+            text-decoration: underline;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 14.5px;
+            font-weight: 800;
+            color: var(--navy-dark);
+            border-bottom: 2px solid var(--gold-primary);
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        /* Terms Cards */
+        .terms-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .term-card {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--gold-primary);
+            border-radius: 6px;
+            padding: 8px 12px;
+        }
+
+        .term-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3px;
+        }
+
+        .term-title {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--navy-dark);
+        }
+
+        .term-badge {
+            font-size: 10px;
+            font-weight: 700;
+            background: #e2e8f0;
+            color: #334155;
+            padding: 1.5px 7px;
+            border-radius: 10px;
+        }
+
+        .term-badge.free {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .term-tech {
+            font-size: 11.5px;
+            color: #475569;
+            margin-bottom: 3px;
+        }
+
+        .term-analogy {
+            font-size: 11.5px;
+            font-weight: 600;
+            color: #0f172a;
+            background: #ffffff;
+            border: 1px dashed #cbd5e1;
+            padding: 5px 8px;
+            border-radius: 5px;
+            margin-top: 3px;
+        }
+
+        /* Cost Table */
+        .cost-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .cost-table th {
+            background-color: var(--navy-dark);
+            color: var(--gold-primary);
+            font-weight: 800;
+            font-size: 12px;
+            padding: 8px 10px;
+            text-align: left;
+            border-bottom: 2px solid var(--gold-primary);
+        }
+
+        .cost-table td {
+            padding: 8px 10px;
+            font-size: 11.5px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .cost-table tr:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        .price-free {
+            color: #15803d;
+            font-weight: 800;
+        }
+
+        .price-paid {
+            color: #b45309;
+            font-weight: 800;
+        }
+
+        /* Summary Box */
+        .summary-box {
+            background-color: #fef3c7;
+            border: 1.5px solid #f59e0b;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #78350f;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        .doc-footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 8px;
+            text-align: center;
+            font-size: 10.5px;
+            color: #64748b;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PAGE 1 -->
+    <div class="pdf-page">
+        <!-- Header Banner -->
+        <div class="header-banner">
+            <div class="header-badge">அதிகாரப்பூர்வ தொழில்நுட்ப அறிக்கை - பகுதி 1</div>
+            <h1 class="header-title">ADVOCATE SUNDARAM WEBSITE</h1>
+            <div class="header-subtitle">இணையதள தொழில்நுட்பச் சொற்கள் & கட்டமைப்பு எளிய விளக்க வழிகாட்டி</div>
+        </div>
+
+        <!-- Preview Box -->
+        <div class="preview-box">
+            <span class="preview-label">🌐 மாதிரி இணையதள நேரலை இணைப்பு (Live Dev Preview URL):</span>
+            <span class="preview-url">https://advocate-sundaram.pages.dev</span>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="section-title">
+            1. இணையதள அம்சங்கள் & தொழில்நுட்பச் சொற்களின் எளிய விளக்கங்கள் (பகுதி 1)
+        </div>
+
+        <div class="terms-container">
+
+            <!-- Term 1 -->
+            <div class="term-card">
+                <div class="term-header">
+                    <span class="term-title">1. Hosting Server (ஹோஸ்டிங் சர்வர் - Cloudflare Edge Network)</span>
+                    <span class="term-badge free">₹0 / மாதாந்திர வாடகை இல்லை</span>
+                </div>
+                <div class="term-tech"><b>தொழில்நுட்பம்:</b> வெப்சைட்டின் கோப்புகள், படங்கள் மற்றும் தரவுகள் 24/7 ஆன்லைனில் இயங்கும் உலகத்தரம் வாய்ந்த சர்வரில் சேமிக்கப்படும் இடம்.</div>
+                <div class="term-analogy">🏛️ <b>சட்டத்துறை உதாரணம் (Office Building):</b> உங்கள் வழக்கறிஞர் அலுவலகத்திற்கான கட்டிடம் / நிலம் போன்றது. உங்கள் வழக்கு கோப்புகள், டேபிள், சேர் அனைத்தும் இருக்கும் இடம். Cloudflare சர்வதேச சர்வரைப் பயன்படுத்துவதால் <b>மாதாந்திர வாடகை கிடையாது (₹0 Free)</b>.</div>
+            </div>
+
+            <!-- Term 2 -->
+            <div class="term-card">
+                <div class="term-header">
+                    <span class="term-title">2. Server Cost (சர்வர் வாடகை கட்டணம்)</span>
+                    <span class="term-badge free">₹0 / முற்றிலும் இலவசம்</span>
+                </div>
+                <div class="term-tech"><b>தொழில்நுட்பம்:</b> சர்வதேச Cloudflare Pages நெட்வொர்க் மூலம் வழங்கப்படும் கட்டணமில்லா சர்வர் சேவை.</div>
+                <div class="term-analogy">🆓 <b>சட்டத்துறை உதாரணம் (Zero Rent Office):</b> சொந்தக் கட்டிடத்தில் இயங்கும் அலுவலகம் போல மாதாந்திர வாடகை ஏதுமின்றி 24 மணிநேரமும் ஆன்லைனில் இயங்கும் தளம்.</div>
+            </div>
+
+            <!-- Term 3 -->
+            <div class="term-card">
+                <div class="term-header">
+                    <span class="term-title">3. SSL Security Certificate (HTTPS 256-bit என்க்ரிப்ஷன்)</span>
+                    <span class="term-badge free">₹0 / இலவசம்</span>
+                </div>
+                <div class="term-tech"><b>தொழில்நுட்பம்:</b> இணையதளத்திற்கும் பார்வையாளருக்கும் இடையிலான தொடர்பைப் பூட்டிப் பாதுகாக்கும் சான்றிதழ்.</div>
+                <div class="term-analogy">🔐 <b>சட்டத்துறை உதாரணம் (Confidentiality Shield):</b> வழக்கறிஞரிடம் வாடிக்கையாளர்கள் பகிரும் ரகசியத் தகவல்களை பிறர் அறிய முடியாதவாறு பூட்டிப் பாதுகாக்கும் ரகசியக் காப்பகம் (HTTPS 🔒 Security Lock) போன்றது.</div>
+            </div>
+
+            <!-- Term 4 -->
+            <div class="term-card">
+                <div class="term-header">
+                    <span class="term-title">4. Website Speed (அதிவேக பக்கப் பதிவேற்றம்)</span>
+                    <span class="term-badge">Ultra-Fast ⚡</span>
+                </div>
+                <div class="term-tech"><b>தொழில்நுட்பம்:</b> உலகெங்கிலும் உள்ள சர்வதேச சேமிப்பகங்கள் (Global Edge CDN) மூலம் தளம் நொடியில் திறக்கும் வேகம்.</div>
+                <div class="term-analogy">⚡ <b>சட்டத்துறை உதாரணம் (Instant Case Record Access):</b> எந்தவிதத் தாமதமும் இன்றி வழக்கு விசாரணையின் நகல் அல்லது தீர்ப்பு நகல் உடனடியாக உங்கள் கைக்குக் கிடைப்பது போன்ற வேகம்.</div>
+            </div>
+
+            <!-- Term 5 -->
+            <div class="term-card">
+                <div class="term-header">
+                    <span class="term-title">5. Search Engine Optimization (SEO & Google Search Indexing)</span>
+                    <span class="term-badge free">சேர்க்கப்பட்டுள்ளது</span>
+                </div>
+                <div class="term-tech"><b>தொழில்நுட்பம்:</b> கூகுளில் மக்கள் தேடும் போது உங்கள் பெயர் மற்றும் வழக்கு சேவைகள் முதல் பக்கத்தில் தோன்றும் தொழில்நுட்ப அமைப்புகள்.</div>
+                <div class="term-analogy">📋 <b>சட்டத்துறை உதாரணம் (Court Directory Roll):</b> நீதிமன்றத் தகவல் பலகையில் அல்லது உள்ளூர் பார் அசோசியேஷன் பதிவேட்டில் உங்கள் பெயர் முதன்மையாகக் காட்சி தருவது போல, "திருச்சி வழக்கறிஞர்" என கூகுளில் தேடும் போது உங்கள் பெயர் தெரிய உதவும் அமைப்பு.</div>
+            </div>
+
+        </div>
+
+        <div class="doc-footer">
+            Advocate Sundaram Official Website Technical Guide | பக்க எண்: 1 / 2
+        </div>
+    </div>
+
+    <!-- PAGE 2 BREAK -->
+    <div class="page-break"></div>
+
+    <!-- PAGE 2 -->
+    <div class="pdf-page" style="margin-top: 10px;">
+        <!-- Header Banner Page 2 -->
+        <div class="header-banner" style="padding: 10px 16px; margin-bottom: 10px;">
+            <div class="header-title" style="font-size: 16px;">ADVOCATE SUNDARAM WEBSITE - பகுதி 2</div>
+            <div class="header-subtitle" style="font-size: 11px;">தொழில்நுட்ப விளக்கங்கள் & செலவு அட்டவணை (Infrastructure & Cost Breakdown)</div>
+        </div>
+
+        <!-- Terms Page 2 -->
+        <div class="terms-container">
+
+            <!-- Term 6 -->
+            <div class="term-card">
+                <div class="term-header">
+                    <span class="term-title">6. Mobile & Tablet Responsive Design (நெகிழ்வான வடிவமைப்பு)</span>
+                    <span class="term-badge">All Devices 📱💻</span>
+                </div>
+                <div class="term-tech"><b>தொழில்நுட்பம்:</b> கணினி, லேப்டாப், டேப்லெட், மொபைல் போன் என எந்தத் திரையிலும் தானாகவே அளவை மாற்றிக் கொள்ளும் நவீன வடிவமைப்பு.</div>
+                <div class="term-analogy">📄 <b>சட்டத்துறை உதாரணம் (Flexible Briefing Document):</b> லீகல் தாள் அல்லது சாதாரண காகிதத்தில் அச்சிட்டாலும் எழுத்துக்கள் மாறாமல் தெளிவாக இருப்பது போல, எந்த மொபைலில் பார்த்தாலும் எழுத்தும் படமும் அழகாகத் தெரியும்.</div>
+            </div>
+
+            <!-- Term 7 -->
+            <div class="term-card">
+                <div class="term-header">
+                    <span class="term-title">7. Unlimited Bandwidth (வரம்பற்ற பட்டை அகலம்)</span>
+                    <span class="term-badge free">₹0 / வரம்பற்றது</span>
+                </div>
+                <div class="term-tech"><b>தொழில்நுட்பம்:</b> ஒரே நேரத்தில் எத்தனை ஆயிரம் பார்வையாளர்கள் வந்தாலும் தளம் முடங்காமல் இயங்கும் திறன்.</div>
+                <div class="term-analogy">🚪 <b>சட்டத்துறை உதாரணம் (Office Entrance Capacity):</b> ஒரே நேரத்தில் 500 வாடிக்கையாளர்கள் உங்கள் அலுவலகத்திற்குள் வந்தாலும் நெரிசலின்றி சிரமமின்றி வந்து செல்லும் அகலமான பாதை.</div>
+            </div>
+
+            <!-- Term 8 -->
+            <div class="term-card">
+                <div class="term-header">
+                    <span class="term-title">8. Domain Name (.in / .com டொமைன் பெயர்)</span>
+                    <span class="term-badge">~ ₹500 - ₹800 / ஆண்டு</span>
+                </div>
+                <div class="term-tech"><b>தொழில்நுட்பம்:</b> இணையத்தில் உங்கள் வெப்சைட்டிற்கான பிரத்யேக முகவரி (எ.கா: advocatesundaram.in).</div>
+                <div class="term-analogy">🏢 <b>சட்டத்துறை உதாரணம் (Office Address Board):</b> உங்கள் அலுவலகத்திற்கான பிரத்யேக முகவரிப் பலகை. வருடத்திற்கு ஒருமுறை மட்டும் புதுப்பித்தல் கட்டணம் செலுத்த வேண்டும்.</div>
+            </div>
+
+            <!-- Term 9 -->
+            <div class="term-card">
+                <div class="term-header">
+                    <span class="term-title">9. Dev Preview Site (மாதிரி இணையதளம்)</span>
+                    <span class="term-badge">Preview Copy ✍️</span>
+                </div>
+                <div class="term-tech"><b>தொழில்நுட்பம்:</b> டொமைன் இணைப்பதற்கு முன் கிளையண்ட் சரிபார்ப்பிற்காக நேரலையில் காட்டப்படும் மாதிரி தளம்.</div>
+                <div class="term-analogy">✍️ <b>சட்டத்துறை உதாரணம் (Case Draft Copy):</b> நீதிமன்றத்தில் மனுவைத் தாக்கல் செய்யும் முன் மனுதாரரிடம் காட்டி திருத்தங்கள் கேட்கப்படும் 'வழக்கு வரைவு நகல்' போன்றது.</div>
+            </div>
+
+        </div>
+
+        <!-- Section 2: Cost Table -->
+        <div class="section-title">
+            2. சர்வர், பாதுகாப்பு & டொமைன் செலவு விவரங்கள் (Cost Breakdown Table)
+        </div>
+
+        <table class="cost-table">
+            <thead>
+                <tr>
+                    <th>சேவை (Service)</th>
+                    <th>சேவை நிறுவனம் (Provider)</th>
+                    <th>ஆண்டு கட்டணம் (Annual Cost)</th>
+                    <th>விளக்கம் (Details)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Global Cloud Hosting</b></td>
+                    <td>Cloudflare Pages</td>
+                    <td class="price-free">₹0 (இலவசம்)</td>
+                    <td>வரம்பற்ற பார்வையாளர்கள் & மாதாந்திர வாடகை இல்லை</td>
+                </tr>
+                <tr>
+                    <td><b>SSL Security (HTTPS 🔒)</b></td>
+                    <td>Cloudflare</td>
+                    <td class="price-free">₹0 (இலவசம்)</td>
+                    <td>256-bit பாதுகாப்பு பூட்டு தானாகவே புதுப்பிக்கப்படும்</td>
+                </tr>
+                <tr>
+                    <td><b>Technical On-Page SEO</b></td>
+                    <td>Internal Code Structure</td>
+                    <td class="price-free">சேர்க்கப்பட்டுள்ளது</td>
+                    <td>கூகுள் தேடலில் வழக்கறிஞர் பெயர் தோன்றும் அமைப்பு</td>
+                </tr>
+                <tr>
+                    <td><b>Domain Name (.in / .com)</b></td>
+                    <td>Official Domain Registrar</td>
+                    <td class="price-paid">~ ₹500 - ₹800 / ஆண்டு</td>
+                    <td>வருடத்திற்கு ஒருமுறை மட்டும் புதுப்பித்தல் கட்டணம்</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="summary-box">
+            💡 சுருக்கம்: மாதாந்திர வாடகை அல்லது மறைமுகக் கட்டணம் எதுவும் கிடையாது. டொமைன் புதுப்பித்தல் மட்டுமே வருடத்திற்கு ஒருமுறை (~ ₹500 - ₹800) ஆகும்.
+        </div>
+
+        <div class="doc-footer">
+            Advocate Sundaram Official Website Technical Guide | பக்க எண்: 2 / 2
+        </div>
+    </div>
+
+</body>
+</html>

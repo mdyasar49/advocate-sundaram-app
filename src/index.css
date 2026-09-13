@@ -834,24 +834,257 @@ header {
     color: var(--text-muted);
 }
 
-@media (max-width: 992px) {
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+/* ==========================================================================
+   RESPONSIVE DESIGN MEDIA QUERIES (Mobile, Tablet, Laptop)
+   NOTE: Desktop layout (1200px and above) remains 100% unchanged!
+   ========================================================================== */
+
+/* 1. Large Laptops / Small Desktops (1024px to 1199px) */
+@media (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+        padding: 0 1.25rem;
+    }
+    .hero-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 2.5rem;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
 }
 
-@media (max-width: 600px) {
-    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+/* 2. Tablets & Small Laptops (768px to 1023px) */
+@media (max-width: 1023px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+    .top-bar-wrapper {
+        justify-content: center;
+        gap: 12px;
+    }
+    .desktop-cta {
+        display: none;
+    }
+    .nav-links {
+        display: none;
+    }
+    .mobile-menu-toggle {
+        display: flex !important;
+    }
+    .hero {
+        padding: 4rem 0 3.5rem;
+        min-height: auto;
+    }
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .hero-description {
+        max-width: 100%;
+    }
+    .advocate-card {
+        max-width: 520px;
+        margin: 0 auto;
+    }
+    .practice-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    .pillars-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
 }
 
-.footer-brand h3 {
-    font-family: var(--font-heading);
-    font-size: 1.4rem;
-    color: #fff;
-    margin-bottom: 8px;
+/* 3. Mobile Devices (Portrait & Small Tablets: 480px to 767px) */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 1rem;
+    }
+    .top-bar {
+        font-size: 0.8rem;
+        padding: 6px 0;
+    }
+    .top-bar-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        text-align: center;
+    }
+    .contact-quick {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+    .navbar {
+        padding: 0.9rem 0;
+    }
+    .brand-logo {
+        gap: 10px;
+    }
+    .brand-text h1 {
+        font-size: 1.15rem;
+    }
+    .brand-text span {
+        font-size: 0.68rem;
+        letter-spacing: 1.5px;
+    }
+    .hero {
+        padding: 3rem 0 2.5rem;
+    }
+    .hero-badge {
+        font-size: 0.75rem;
+        padding: 6px 14px;
+        margin-bottom: 1rem;
+    }
+    .hero-headline {
+        font-size: 2.1rem;
+        line-height: 1.2;
+    }
+    .hero-description {
+        font-size: 0.98rem;
+        margin-bottom: 1.8rem;
+    }
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+    .btn-call, .btn-whatsapp {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+    .advocate-card {
+        padding: 1.8rem 1.25rem;
+        border-radius: 20px;
+        width: 100%;
+    }
+    .advocate-avatar-wrap {
+        width: 105px;
+        height: 105px;
+        margin-bottom: 1.25rem;
+    }
+    .advocate-avatar {
+        font-size: 2.8rem;
+    }
+    .advocate-details h3 {
+        font-size: 1.45rem;
+    }
+    .section-padding {
+        padding: 3.5rem 0;
+    }
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+    .section-title {
+        font-size: 1.85rem;
+    }
+    .practice-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    .practice-card {
+        padding: 1.6rem 1.25rem;
+        border-radius: 16px;
+    }
+    .card-num {
+        font-size: 2rem;
+        top: 16px;
+        right: 18px;
+    }
+    .pillars-list {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    .pillar-box {
+        padding: 1.4rem;
+    }
+    .contact-box {
+        padding: 2rem 1.25rem;
+        border-radius: 20px;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .submit-btn {
+        padding: 14px 24px;
+        font-size: 0.95rem;
+    }
+    .site-footer {
+        padding: 2.5rem 0 1.5rem;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .map-container {
+        height: 200px;
+    }
 }
 
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 1.8rem;
+/* 4. Extra Small Mobile Screens (320px to 479px) */
+@media (max-width: 479px) {
+    .brand-text h1 {
+        font-size: 1rem;
+    }
+    .brand-text span {
+        display: none;
+    }
+    .hero-headline {
+        font-size: 1.8rem;
+    }
+    .section-title {
+        font-size: 1.6rem;
+    }
+}
+
+/* Mobile Slide-Down Overlay Styles */
+.mobile-nav-overlay {
+    background: rgba(8, 13, 26, 0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--navy-card-border);
+    overflow: hidden;
+}
+
+.mobile-nav-content {
+    padding: 1.25rem 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
     text-align: center;
-    font-size: 0.85rem;
 }
+
+.mobile-nav-links li {
+    margin-bottom: 12px;
+}
+
+.mobile-nav-links a {
+    color: #f8fafc;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: color 0.3s ease;
+}
+
+.mobile-nav-links a:hover {
+    color: var(--gold-accent);
+}
+
