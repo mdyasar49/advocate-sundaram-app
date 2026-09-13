@@ -3,7 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import LanguageIcon from '@mui/icons-material/Language';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import BalanceIcon from '@mui/icons-material/Balance';
-import GavelIcon from '@mui/icons-material/Gavel';
+import ScaleIcon from '@mui/icons-material/Scale';
 import ContactPageIcon from '@mui/icons-material/ContactPage';
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
 import BusinessIcon from '@mui/icons-material/Business';
@@ -46,7 +46,7 @@ const Footer = () => {
             </h4>
             <ul className="footer-courts-list">
               <li><BalanceIcon sx={{ color: 'var(--gold-accent)', fontSize: '0.9rem', marginRight: '6px', verticalAlign: 'middle' }} /> {t('c1')}</li>
-              <li><GavelIcon sx={{ color: 'var(--gold-accent)', fontSize: '0.9rem', marginRight: '6px', verticalAlign: 'middle' }} /> {t('c2')}</li>
+              <li><ScaleIcon sx={{ color: 'var(--gold-accent)', fontSize: '0.9rem', marginRight: '6px', verticalAlign: 'middle' }} /> {t('c2')}</li>
               <li><AccountBalanceIcon sx={{ color: 'var(--gold-accent)', fontSize: '0.9rem', marginRight: '6px', verticalAlign: 'middle' }} /> {t('c3')}</li>
             </ul>
           </div>
@@ -58,17 +58,19 @@ const Footer = () => {
               {t('footerContactHeader')}
             </h4>
 
-            {/* Direct Phone Link */}
-            <a href="tel:+918838828632" className="footer-phone-link">
-              <PhoneInTalkIcon sx={{ verticalAlign: 'middle', marginRight: '6px' }} />
-              <span>+91 88388 28632</span>
-            </a>
+            {/* Direct Phone Call Item */}
+            <div className="footer-contact-item">
+              <PhoneInTalkIcon sx={{ color: 'var(--gold-accent)', fontSize: '1.2rem', verticalAlign: 'middle', marginRight: '8px' }} />
+              <a href="tel:+918838828632" className="footer-phone-link">
+                +91 88388 28632
+              </a>
+            </div>
 
             {/* Interactive Office Address Block */}
             <div
               className={`footer-addr-card ${activeMap === 'office' ? 'active' : ''}`}
               onClick={() => setActiveMap('office')}
-              title="Click to view Jeeyapuram Office on Map"
+              title="Click to view Office on Map"
             >
               <div className="addr-card-header">
                 <span><BusinessIcon sx={{ fontSize: '1rem', verticalAlign: 'middle', marginRight: '4px' }} /> {t('officeAddressHeader')}</span>
@@ -90,7 +92,7 @@ const Footer = () => {
               title="Click to view District Court on Map"
             >
               <div className="addr-card-header">
-                <span><GavelIcon sx={{ fontSize: '1rem', verticalAlign: 'middle', marginRight: '4px' }} /> {t('courtAddressHeader')}</span>
+                <span><ScaleIcon sx={{ fontSize: '1rem', verticalAlign: 'middle', marginRight: '4px' }} /> {t('courtAddressHeader')}</span>
                 <span className="pin-status-badge">
                   {activeMap === 'court' ? t('badgeActivePin') : t('badgeClickMap')}
                 </span>
