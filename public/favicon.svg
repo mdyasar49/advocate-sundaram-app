@@ -1,27 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <rect width="64" height="64" rx="16" fill="#080d1a"/>
-  <!-- Outer Gold Border -->
-  <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.4"/>
-  <!-- Scales of Justice Icon -->
-  <g fill="none" stroke="url(#goldGrad)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Base & Pillar -->
-    <line x1="32" y1="14" x2="32" y2="48" />
-    <line x1="20" y1="48" x2="44" y2="48" />
-    <line x1="25" y1="44" x2="39" y2="44" />
-    <!-- Top finial -->
-    <circle cx="32" cy="12" r="2.5" fill="#f3e5ab" stroke="#d4af37" stroke-width="1" />
-    <!-- Main Beam -->
-    <line x1="14" y1="20" x2="50" y2="20" />
-    <!-- Left Chain & Pan -->
-    <path d="M14 20 L8 34 H20 Z" fill="rgba(212, 175, 55, 0.3)" />
-    <!-- Right Chain & Pan -->
-    <path d="M50 20 L44 34 H56 Z" fill="rgba(212, 175, 55, 0.3)" />
+  <!-- Gold Circular Shield Border -->
+  <circle cx="32" cy="32" r="27" fill="none" stroke="url(#goldGrad)" stroke-width="2.5"/>
+  <!-- Hathoda / Gavel Icon -->
+  <g transform="rotate(-30 32 30)">
+    <!-- Gavel Head -->
+    <rect x="20" y="14" width="24" height="12" rx="3" fill="url(#goldGrad)" stroke="#f3e5ab" stroke-width="1"/>
+    <!-- Head Metal Rings -->
+    <rect x="23" y="14" width="3" height="12" fill="#ffffff" opacity="0.5"/>
+    <rect x="38" y="14" width="3" height="12" fill="#ffffff" opacity="0.5"/>
+    <!-- Handle -->
+    <rect x="30" y="26" width="4" height="24" rx="2" fill="url(#goldGrad)"/>
+    <!-- Handle Grip accent -->
+    <line x1="30" y1="42" x2="34" y2="42" stroke="#996515" stroke-width="1.5"/>
+    <line x1="30" y1="46" x2="34" y2="46" stroke="#996515" stroke-width="1.5"/>
   </g>
+  <!-- Sound Block Base -->
+  <ellipse cx="32" cy="52" rx="15" ry="4" fill="url(#goldGrad)" stroke="#f3e5ab" stroke-width="1"/>
+  <ellipse cx="32" cy="51" rx="12" ry="2.5" fill="#080d1a" opacity="0.6"/>
+
   <defs>
     <linearGradient id="goldGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#f3e5ab" />
-      <stop offset="50%" stop-color="#d4af37" />
-      <stop offset="100%" stop-color="#996515" />
+      <stop offset="0%" stop-color="#f3e5ab"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#996515"/>
     </linearGradient>
   </defs>
 </svg>

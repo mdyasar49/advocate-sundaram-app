@@ -3,7 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
 import { Box, Card, CardContent, Typography } from '@mui/material';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
-import ShieldIcon from '@mui/icons-material/Shield';
+import GavelIcon from '@mui/icons-material/Gavel';
 import DescriptionIcon from '@mui/icons-material/Description';
 import Diversity1Icon from '@mui/icons-material/Diversity1';
 import HandshakeIcon from '@mui/icons-material/Handshake';
@@ -14,7 +14,7 @@ const PracticeAreas = () => {
 
   const practices = [
     { num: '01', icon: <AccountBalanceIcon sx={{ fontSize: '2rem', color: 'var(--gold-accent)' }} />, title: t('p1Title'), desc: t('p1Desc') },
-    { num: '02', icon: <ShieldIcon sx={{ fontSize: '2rem', color: 'var(--gold-accent)' }} />, title: t('p2Title'), desc: t('p2Desc') },
+    { num: '02', icon: <GavelIcon sx={{ fontSize: '2rem', color: 'var(--gold-accent)' }} />, title: t('p2Title'), desc: t('p2Desc') },
     { num: '03', icon: <DescriptionIcon sx={{ fontSize: '2rem', color: 'var(--gold-accent)' }} />, title: t('p3Title'), desc: t('p3Desc') },
     { num: '04', icon: <Diversity1Icon sx={{ fontSize: '2rem', color: 'var(--gold-accent)' }} />, title: t('p4Title'), desc: t('p4Desc') },
     { num: '05', icon: <HandshakeIcon sx={{ fontSize: '2rem', color: 'var(--gold-accent)' }} />, title: t('p5Title'), desc: t('p5Desc') },

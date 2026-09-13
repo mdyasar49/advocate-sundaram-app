@@ -2,7 +2,7 @@ import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
 import { Button, Box } from '@mui/material';
-import ScaleIcon from '@mui/icons-material/Scale';
+import GavelIcon from '@mui/icons-material/Gavel';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
           transition={{ duration: 0.5 }}
         >
           <div className="logo-icon">
-            <ScaleIcon sx={{ color: 'var(--gold-accent)', fontSize: '1.4rem' }} />
+            <GavelIcon sx={{ color: 'var(--gold-accent)', fontSize: '1.4rem' }} />
           </div>
           <div className="brand-text">
             <h1>{t('brandTitle')}</h1>
