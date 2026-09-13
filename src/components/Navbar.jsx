@@ -2,7 +2,7 @@ import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
 import { Button, Box } from '@mui/material';
-import GavelIcon from '@mui/icons-material/Gavel';
+import AdvocateBandLogo from './AdvocateBandLogo';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const Navbar = () => {
@@ -18,8 +18,8 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="logo-icon">
-            <GavelIcon sx={{ color: 'var(--gold-accent)', fontSize: '1.4rem' }} />
+          <div className="logo-icon" style={{ background: 'transparent', padding: 0 }}>
+            <AdvocateBandLogo size={36} />
           </div>
           <div className="brand-text">
             <h1>{t('brandTitle')}</h1>

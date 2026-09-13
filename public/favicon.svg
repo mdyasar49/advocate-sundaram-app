@@ -1,26 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" rx="16" fill="#080d1a"/>
-  <!-- Gold Circular Shield Border -->
-  <circle cx="32" cy="32" r="27" fill="none" stroke="url(#goldGrad)" stroke-width="2.5"/>
-  <!-- Hathoda / Gavel Icon -->
-  <g transform="rotate(-30 32 30)">
-    <!-- Gavel Head -->
-    <rect x="20" y="14" width="24" height="12" rx="3" fill="url(#goldGrad)" stroke="#f3e5ab" stroke-width="1"/>
-    <!-- Head Metal Rings -->
-    <rect x="23" y="14" width="3" height="12" fill="#ffffff" opacity="0.5"/>
-    <rect x="38" y="14" width="3" height="12" fill="#ffffff" opacity="0.5"/>
-    <!-- Handle -->
-    <rect x="30" y="26" width="4" height="24" rx="2" fill="url(#goldGrad)"/>
-    <!-- Handle Grip accent -->
-    <line x1="30" y1="42" x2="34" y2="42" stroke="#996515" stroke-width="1.5"/>
-    <line x1="30" y1="46" x2="34" y2="46" stroke="#996515" stroke-width="1.5"/>
-  </g>
-  <!-- Sound Block Base -->
-  <ellipse cx="32" cy="52" rx="15" ry="4" fill="url(#goldGrad)" stroke="#f3e5ab" stroke-width="1"/>
-  <ellipse cx="32" cy="51" rx="12" ry="2.5" fill="#080d1a" opacity="0.6"/>
+  <!-- Background Black/Dark Shield Circle -->
+  <circle cx="32" cy="32" r="29" fill="#080d1a" stroke="url(#goldBorder)" stroke-width="2.5"/>
+  <circle cx="32" cy="32" r="26" fill="none" stroke="#d4af37" stroke-width="0.8" opacity="0.4" stroke-dasharray="3 2"/>
+
+  <!-- White Winged Collar -->
+  <path d="M19 18 C24 16, 28 16, 32 18.5 C36 16, 40 16, 45 18 L47 22 L32 20.5 L17 22 Z" fill="#ffffff" filter="drop-shadow(0px 2px 3px rgba(0,0,0,0.5))"/>
+  <path d="M20 18.5 L32 21 L44 18.5" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Left Advocate Band -->
+  <polygon points="25.5,21 31,21 30.5,45 24.5,44" fill="#ffffff" filter="drop-shadow(0px 2px 2px rgba(0,0,0,0.3))"/>
+  <polygon points="28,21 31,21 30.5,45" fill="#e2e8f0" opacity="0.7"/>
+
+  <!-- Right Advocate Band -->
+  <polygon points="33,21 38.5,21 39.5,44 33.5,45" fill="#ffffff" filter="drop-shadow(0px 2px 2px rgba(0,0,0,0.3))"/>
+  <polygon points="33,21 35.5,21 35.5,45" fill="#e2e8f0" opacity="0.7"/>
+
+  <!-- Gold Star Accent at Bottom -->
+  <polygon points="32,49 33.2,52.5 36.8,52.5 33.8,54.6 35,58 32,55.8 29,58 30.2,54.6 27.2,52.5 30.8,52.5" fill="url(#goldBorder)"/>
 
   <defs>
-    <linearGradient id="goldGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+    <linearGradient id="goldBorder" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#f3e5ab"/>
       <stop offset="50%" stop-color="#d4af37"/>
       <stop offset="100%" stop-color="#996515"/>
