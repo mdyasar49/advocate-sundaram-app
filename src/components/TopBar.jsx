@@ -28,7 +28,6 @@ const TopBar = () => {
               size="small"
               onClick={toggleLanguage}
               className={`lang-btn ${lang === 'en' ? 'active' : ''}`}
-              onClick={toggleLanguage}
               sx={{
                 minWidth: 'auto',
                 px: 1.5,
