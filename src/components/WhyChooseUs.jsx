@@ -12,10 +12,10 @@ const WhyChooseUs = () => {
   const { t } = useLanguage();
 
   const pillars = [
-    { icon: <VerifiedIcon sx={{ fontSize: '2.5rem', color: 'var(--gold-accent)' }} />, title: t('pil1Title'), desc: t('pil1Desc'), stat: '100% Bar Certified' },
-    { icon: <AutoAwesomeIcon sx={{ fontSize: '2.5rem', color: 'var(--gold-accent)' }} />, title: t('pil2Title'), desc: t('pil2Desc'), stat: '15+ Yrs Experience' },
-    { icon: <LockIcon sx={{ fontSize: '2.5rem', color: 'var(--gold-accent)' }} />, title: t('pil3Title'), desc: t('pil3Desc'), stat: '100% Confidential' },
-    { icon: <AccountBalanceIcon sx={{ fontSize: '2.5rem', color: 'var(--gold-accent)' }} />, title: t('pil4Title'), desc: t('pil4Desc'), stat: 'High Court & District Courts' },
+    { num: '01', icon: <VerifiedIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('pil1Title'), desc: t('pil1Desc'), stat: '100% Bar Certified' },
+    { num: '02', icon: <AutoAwesomeIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('pil2Title'), desc: t('pil2Desc'), stat: '15+ Yrs Experience' },
+    { num: '03', icon: <LockIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('pil3Title'), desc: t('pil3Desc'), stat: '100% Confidential' },
+    { num: '04', icon: <AccountBalanceIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('pil4Title'), desc: t('pil4Desc'), stat: 'High Court & District Courts' },
   ];
 
   return (
@@ -91,17 +91,24 @@ const WhyChooseUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
+              whileHover={{ y: -8 }}
               className="h-full"
             >
               <Paper
                 elevation={0}
-                className="pillar-box group relative h-full backdrop-blur-xl border border-amber-500/20 bg-slate-900/70 rounded-2xl p-6 text-center flex flex-col justify-between transition-all duration-300 hover:border-amber-400 hover:shadow-xl hover:shadow-amber-500/10 hover:-translate-y-2"
+                className="pillar-box group relative h-full backdrop-blur-xl border border-amber-500/20 bg-slate-900/80 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:border-amber-400 hover:shadow-2xl hover:shadow-amber-500/20"
               >
                 <div>
-                  <Box className="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
+                  <span className="card-num absolute top-5 right-6 text-4xl font-extrabold text-amber-400/10 group-hover:text-amber-400/20 transition-colors font-serif">
+                    {item.num}
+                  </span>
+                  <div
+                    className="practice-icon w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mb-5 group-hover:bg-amber-500/20 group-hover:border-amber-400 transition-all shadow-lg shadow-amber-500/10"
+                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px' }}
+                  >
                     {item.icon}
-                  </Box>
-                  <Typography variant="h6" component="h5" sx={{ color: '#fff', fontSize: '1.15rem', fontWeight: 700, mb: 1, fontFamily: 'var(--font-heading)' }}>
+                  </div>
+                  <Typography variant="h6" component="h5" sx={{ color: '#fff', fontSize: '1.2rem', fontWeight: 700, mb: 1, fontFamily: 'var(--font-heading)' }}>
                     {item.title}
                   </Typography>
                   <Typography variant="body2" sx={{ color: 'var(--text-muted)', fontSize: '0.88rem', lineHeight: 1.6, mb: 3 }}>
@@ -113,13 +120,15 @@ const WhyChooseUs = () => {
                   label={item.stat}
                   size="small"
                   sx={{
-                    background: 'rgba(212, 175, 55, 0.1)',
+                    background: 'rgba(212, 175, 55, 0.12)',
                     color: 'var(--gold-accent)',
-                    border: '1px solid rgba(212, 175, 55, 0.25)',
+                    border: '1px solid rgba(212, 175, 55, 0.3)',
                     fontWeight: 700,
                     fontSize: '0.75rem',
                     py: 0.5,
-                    mx: 'auto',
+                    px: 1,
+                    width: 'fit-content',
+                    mt: 'auto',
                   }}
                 />
               </Paper>
