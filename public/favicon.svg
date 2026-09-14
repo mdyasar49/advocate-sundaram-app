@@ -1,28 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <!-- Background Black/Dark Shield Circle -->
-  <circle cx="32" cy="32" r="29" fill="#080d1a" stroke="url(#goldBorder)" stroke-width="2.5"/>
-  <circle cx="32" cy="32" r="26" fill="none" stroke="#d4af37" stroke-width="0.8" opacity="0.4" stroke-dasharray="3 2"/>
-
-  <!-- White Winged Collar -->
-  <path d="M19 18 C24 16, 28 16, 32 18.5 C36 16, 40 16, 45 18 L47 22 L32 20.5 L17 22 Z" fill="#ffffff" filter="drop-shadow(0px 2px 3px rgba(0,0,0,0.5))"/>
-  <path d="M20 18.5 L32 21 L44 18.5" fill="none" stroke="#cbd5e1" stroke-width="1"/>
-
-  <!-- Left Advocate Band -->
-  <polygon points="25.5,21 31,21 30.5,45 24.5,44" fill="#ffffff" filter="drop-shadow(0px 2px 2px rgba(0,0,0,0.3))"/>
-  <polygon points="28,21 31,21 30.5,45" fill="#e2e8f0" opacity="0.7"/>
-
-  <!-- Right Advocate Band -->
-  <polygon points="33,21 38.5,21 39.5,44 33.5,45" fill="#ffffff" filter="drop-shadow(0px 2px 2px rgba(0,0,0,0.3))"/>
-  <polygon points="33,21 35.5,21 35.5,45" fill="#e2e8f0" opacity="0.7"/>
-
-  <!-- Gold Star Accent at Bottom -->
-  <polygon points="32,49 33.2,52.5 36.8,52.5 33.8,54.6 35,58 32,55.8 29,58 30.2,54.6 27.2,52.5 30.8,52.5" fill="url(#goldBorder)"/>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="64" height="64">
   <defs>
-    <linearGradient id="goldBorder" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#f3e5ab"/>
-      <stop offset="50%" stop-color="#d4af37"/>
-      <stop offset="100%" stop-color="#996515"/>
+    <linearGradient id="goldLogoGradFav" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8ecbf" />
+      <stop offset="35%" stop-color="#d4af37" />
+      <stop offset="70%" stop-color="#b8860b" />
+      <stop offset="100%" stop-color="#8a5a00" />
     </linearGradient>
+
+    <path id="topArcFav" d="M 21,60 A 39,39 0 1,1 99,60" fill="none" />
+    <path id="bottomArcFav" d="M 99,60 A 39,39 0 0,1 21,60" fill="none" />
   </defs>
+
+  <circle cx="60" cy="60" r="57" fill="#060a14" stroke="url(#goldLogoGradFav)" stroke-width="3.5" />
+  <circle cx="60" cy="60" r="51.5" fill="none" stroke="url(#goldLogoGradFav)" stroke-width="1" stroke-dasharray="4 2.5" opacity="0.6" />
+
+  <text font-family="'Cinzel', serif">
+    <textPath href="#topArcFav" startOffset="50%" text-anchor="middle" fill="url(#goldLogoGradFav)" font-size="9.2" font-weight="800" letter-spacing="1.4px">
+      ADVOCATE SUNDARAM
+    </textPath>
+  </text>
+
+  <text font-family="sans-serif">
+    <textPath href="#bottomArcFav" startOffset="50%" text-anchor="middle" fill="#cbd5e1" font-size="6.8" font-weight="700" letter-spacing="1.2px">
+      TRICHY CITY COURT
+    </textPath>
+  </text>
+
+  <g transform="translate(0, 3)">
+    <line x1="60" y1="40" x2="60" y2="58" stroke="url(#goldLogoGradFav)" stroke-width="2" stroke-linecap="round" />
+    <line x1="42" y1="44" x2="78" y2="44" stroke="url(#goldLogoGradFav)" stroke-width="2" stroke-linecap="round" />
+    <line x1="42" y1="44" x2="36" y2="52" stroke="url(#goldLogoGradFav)" stroke-width="0.9" />
+    <line x1="42" y1="44" x2="48" y2="52" stroke="url(#goldLogoGradFav)" stroke-width="0.9" />
+    <path d="M 34 52 Q 42 56 50 52 Z" fill="url(#goldLogoGradFav)" opacity="0.85" />
+    <line x1="78" y1="44" x2="72" y2="52" stroke="url(#goldLogoGradFav)" stroke-width="0.9" />
+    <line x1="78" y1="44" x2="84" y2="52" stroke="url(#goldLogoGradFav)" stroke-width="0.9" />
+    <path d="M 70 52 Q 78 56 86 52 Z" fill="url(#goldLogoGradFav)" opacity="0.85" />
+    <path d="M 38 56 C 45 53.5, 52 53.5, 60 56 C 68 53.5, 75 53.5, 82 56 L 84 60 L 60 58.5 L 36 60 Z" fill="#ffffff" />
+    <polygon points="49,59 58,59 57,84 48,82" fill="#ffffff" />
+    <polygon points="62,59 71,59 72,82 63,84" fill="#ffffff" />
+    <polygon points="60,86 61.5,89.5 65.5,89.5 62.3,91.8 63.5,95.5 60,93 56.5,95.5 57.7,91.8 54.5,89.5 58.5,89.5" fill="url(#goldLogoGradFav)" />
+  </g>
 </svg>

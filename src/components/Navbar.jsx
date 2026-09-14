@@ -30,8 +30,8 @@ const Navbar = () => {
           transition={{ duration: 0.5 }}
           onClick={closeMobileMenu}
         >
-          <div className="logo-icon" style={{ background: 'transparent', padding: 0 }}>
-            <AdvocateBandLogo size={36} />
+          <div className="logo-icon" style={{ background: 'transparent', border: 'none', padding: 0, width: 'auto', height: 'auto', boxShadow: 'none' }}>
+            <AdvocateBandLogo size={46} />
           </div>
           <div className="brand-text">
             <h1>{t('brandTitle')}</h1>
