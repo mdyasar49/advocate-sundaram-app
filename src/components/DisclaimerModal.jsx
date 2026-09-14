@@ -33,41 +33,42 @@ const DisclaimerModal = () => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[999999] flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md">
-          {/* Modal Card */}
+        <div className="fixed inset-0 z-[999999] flex items-center justify-center p-4 sm:p-8 bg-black/90 backdrop-blur-xl">
+          {/* Modal Container */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.93, y: 15 }}
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.93, y: 15 }}
-            transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="w-full max-w-lg sm:max-w-xl max-h-[92vh] bg-[#0e121e] border border-amber-500/35 rounded-2xl p-5 sm:p-8 shadow-2xl shadow-black/95 relative flex flex-col justify-between overflow-y-auto"
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ duration: 0.35, ease: 'easeOut' }}
+            className="w-full max-w-2xl max-h-[90vh] bg-[#121622] border border-amber-500/35 rounded-3xl p-6 sm:p-10 shadow-[0_30px_90px_rgba(0,0,0,0.95),0_0_30px_rgba(212,175,55,0.12)] relative flex flex-col justify-between overflow-y-auto"
           >
-            {/* Background Ambient Glow */}
-            <div className="absolute -top-24 -left-24 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+            {/* Ambient Background Glows */}
+            <div className="absolute -top-32 -left-32 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-32 -right-32 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
 
             <div>
-              {/* Top Row: Logo & Brand + Language Switcher */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5 pb-4 border-b border-amber-500/20">
-                <div className="flex items-center gap-3.5">
-                  <div className="flex-shrink-0 p-2 rounded-xl bg-amber-500/10 border border-amber-500/30">
-                    <AdvocateBandLogo size={36} />
+              {/* Header: Logo, Brand & Language Selector Bar */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-amber-500/20">
+                <div className="flex items-center gap-4">
+                  <div className="flex-shrink-0 p-3 rounded-2xl bg-amber-500/10 border border-amber-500/30 shadow-inner">
+                    <AdvocateBandLogo size={42} />
                   </div>
                   <div>
-                    <h2 className="text-base sm:text-lg font-bold tracking-wider text-amber-300 font-serif uppercase">
+                    <h2 className="text-lg sm:text-2xl font-bold tracking-wider text-amber-300 font-serif uppercase">
                       {t('brandTitle')}
                     </h2>
-                    <p className="text-[10px] sm:text-xs font-semibold text-slate-400 tracking-widest uppercase mt-0.5">
+                    <p className="text-[11px] sm:text-xs font-bold text-amber-400/80 tracking-[2px] uppercase mt-0.5">
                       ADVOCATES & LEGAL CONSULTANTS
                     </p>
                   </div>
                 </div>
 
-                {/* Integrated 5-Language Switcher inside Modal */}
-                <div className="flex items-center gap-1 p-1 rounded-xl bg-slate-900/90 border border-amber-500/25 self-start sm:self-center">
-                  <LanguageIcon sx={{ color: 'var(--gold-accent)', fontSize: '0.95rem', ml: 0.5, mr: 0.5 }} />
+                {/* 5-Language Switcher Pills */}
+                <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl bg-slate-900/90 border border-amber-500/30 shadow-md self-start sm:self-center">
+                  <LanguageIcon sx={{ color: 'var(--gold-accent)', fontSize: '1.1rem', mx: 0.5 }} />
                   {[
                     { code: 'ta', label: 'தமிழ்' },
-                    { code: 'en', label: 'ENG' },
+                    { code: 'en', label: 'English' },
                     { code: 'hi', label: 'हिंदी' },
                     { code: 'te', label: 'తెలుగు' },
                     { code: 'ml', label: 'മലയാളം' },
@@ -76,10 +77,10 @@ const DisclaimerModal = () => {
                       key={item.code}
                       type="button"
                       onClick={() => setLang(item.code)}
-                      className={`px-2 py-0.8 text-[11px] font-bold rounded-lg transition-all ${
+                      className={`px-3 py-1 text-xs font-bold rounded-xl transition-all duration-300 ${
                         lang === item.code
-                          ? 'bg-amber-400 text-slate-950 shadow-sm shadow-amber-500/30 font-extrabold'
-                          : 'text-slate-300 hover:text-amber-300 hover:bg-white/5'
+                          ? 'bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-600 text-slate-950 shadow-md shadow-amber-500/30 scale-105 font-extrabold'
+                          : 'text-slate-300 hover:text-amber-300 hover:bg-white/10'
                       }`}
                     >
                       {item.label}
@@ -88,29 +89,29 @@ const DisclaimerModal = () => {
                 </div>
               </div>
 
-              {/* Modal Title */}
-              <div className="flex items-center gap-2.5 mb-3.5">
-                <BalanceIcon sx={{ color: 'var(--gold-accent)', fontSize: '1.3rem' }} />
-                <h3 className="text-lg sm:text-2xl font-bold font-serif text-amber-400">
-                  {t('disclaimerTitle')}
+              {/* Title Section */}
+              <div className="mt-6 mb-4">
+                <h3 className="text-xl sm:text-3xl font-bold font-serif text-amber-400 flex items-center gap-3">
+                  <BalanceIcon sx={{ color: 'var(--gold-accent)', fontSize: '1.6rem' }} />
+                  <span>{t('disclaimerTitle')}</span>
                 </h3>
               </div>
 
-              {/* Disclaimer Body Paragraph Container */}
-              <div className="bg-slate-900/80 border border-amber-500/15 rounded-xl p-4 sm:p-5 mb-6 text-slate-200 text-xs sm:text-sm leading-relaxed font-sans shadow-inner">
+              {/* Disclaimer Body Content Box */}
+              <div className="bg-slate-950/80 border border-amber-500/20 rounded-2xl p-5 sm:p-7 mb-8 text-slate-300 text-xs sm:text-base leading-relaxed sm:leading-loose font-sans shadow-inner tracking-wide">
                 <p>{t('disclaimerText')}</p>
               </div>
             </div>
 
             {/* Action Accept Button Container */}
-            <div className="pt-2 flex justify-start sm:justify-start w-full">
+            <div className="pt-2 flex justify-start sm:justify-start">
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={handleAccept}
-                className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-600 text-slate-950 font-extrabold text-xs sm:text-sm tracking-wider uppercase shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-all duration-300 flex items-center justify-center gap-2 border border-amber-300/40"
+                className="w-full sm:w-auto px-10 py-4 rounded-2xl bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-600 text-slate-950 font-extrabold text-xs sm:text-sm tracking-[2px] uppercase shadow-xl shadow-amber-500/30 hover:shadow-amber-500/50 transition-all duration-300 flex items-center justify-center gap-3 border border-amber-300/40"
               >
-                <GavelIcon sx={{ fontSize: '1.15rem' }} />
+                <GavelIcon sx={{ fontSize: '1.25rem' }} />
                 <span>{t('disclaimerBtn')}</span>
               </motion.button>
             </div>
