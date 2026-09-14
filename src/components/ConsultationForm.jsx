@@ -69,8 +69,8 @@ const ConsultationForm = () => {
       >
         <div className="absolute -top-24 -right-24 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
-        <form onSubmit={handleSubmit} className="space-y-7 sm:space-y-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+        <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-7 sm:gap-8">
+          <div className="col-span-1">
             <TextField
               fullWidth
               label={t('lblName')}
@@ -97,7 +97,9 @@ const ConsultationForm = () => {
                 },
               }}
             />
+          </div>
 
+          <div className="col-span-1">
             <TextField
               fullWidth
               label={t('lblPhone')}
@@ -127,7 +129,7 @@ const ConsultationForm = () => {
             />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+          <div className="col-span-1">
             <TextField
               select
               fullWidth
@@ -161,7 +163,9 @@ const ConsultationForm = () => {
               <MenuItem value="Family Law">{t('opt4')}</MenuItem>
               <MenuItem value="General Consult">{t('opt5')}</MenuItem>
             </TextField>
+          </div>
 
+          <div className="col-span-1">
             <TextField
               fullWidth
               label={t('lblLocation')}
@@ -189,60 +193,64 @@ const ConsultationForm = () => {
             />
           </div>
 
-          <TextField
-            fullWidth
-            multiline
-            rows={4}
-            label={t('lblMsg')}
-            name="message"
-            placeholder="Briefly describe your legal query..."
-            value={formData.message}
-            onChange={handleChange}
-            required
-            variant="outlined"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start" sx={{ alignSelf: 'flex-start', mt: 1 }}>
-                  <MessageIcon sx={{ color: 'var(--gold-accent)' }} />
-                </InputAdornment>
-              ),
-            }}
-            sx={{
-              '& .MuiOutlinedInput-root': {
-                borderRadius: '16px',
-                background: 'rgba(8, 13, 26, 0.85)',
-                '& fieldset': { borderColor: 'rgba(212, 175, 55, 0.3)' },
-                '&:hover fieldset': { borderColor: 'var(--gold-accent)' },
-                '&.Mui-focused fieldset': { borderColor: 'var(--gold-accent)' },
-              },
-            }}
-          />
-
-          <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.98 }}>
-            <Button
-              type="submit"
-              variant="contained"
+          <div className="col-span-1 sm:col-span-2">
+            <TextField
               fullWidth
-              size="large"
-              startIcon={<WhatsAppIcon sx={{ fontSize: '1.4rem !important' }} />}
+              multiline
+              rows={4}
+              label={t('lblMsg')}
+              name="message"
+              placeholder="Briefly describe your legal query..."
+              value={formData.message}
+              onChange={handleChange}
+              required
+              variant="outlined"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start" sx={{ alignSelf: 'flex-start', mt: 1 }}>
+                    <MessageIcon sx={{ color: 'var(--gold-accent)' }} />
+                  </InputAdornment>
+                ),
+              }}
               sx={{
-                background: 'var(--gold-gradient)',
-                color: '#080d1a',
-                py: 1.8,
-                borderRadius: '50px',
-                fontWeight: 800,
-                fontSize: '1.05rem',
-                textTransform: 'none',
-                boxShadow: '0 6px 25px var(--gold-glow)',
-                '&:hover': {
-                  background: 'var(--gold-gradient)',
-                  boxShadow: '0 8px 30px rgba(212, 175, 55, 0.6)',
+                '& .MuiOutlinedInput-root': {
+                  borderRadius: '16px',
+                  background: 'rgba(8, 13, 26, 0.85)',
+                  '& fieldset': { borderColor: 'rgba(212, 175, 55, 0.3)' },
+                  '&:hover fieldset': { borderColor: 'var(--gold-accent)' },
+                  '&.Mui-focused fieldset': { borderColor: 'var(--gold-accent)' },
                 },
               }}
-            >
-              {t('btnSubmit')}
-            </Button>
-          </motion.div>
+            />
+          </div>
+
+          <div className="col-span-1 sm:col-span-2 pt-2">
+            <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.98 }}>
+              <Button
+                type="submit"
+                variant="contained"
+                fullWidth
+                size="large"
+                startIcon={<WhatsAppIcon sx={{ fontSize: '1.4rem !important' }} />}
+                sx={{
+                  background: 'var(--gold-gradient)',
+                  color: '#080d1a',
+                  py: 1.8,
+                  borderRadius: '50px',
+                  fontWeight: 800,
+                  fontSize: '1.05rem',
+                  textTransform: 'none',
+                  boxShadow: '0 6px 25px var(--gold-glow)',
+                  '&:hover': {
+                    background: 'var(--gold-gradient)',
+                    boxShadow: '0 8px 30px rgba(212, 175, 55, 0.6)',
+                  },
+                }}
+              >
+                {t('btnSubmit')}
+              </Button>
+            </motion.div>
+          </div>
         </form>
 
         <Snackbar
