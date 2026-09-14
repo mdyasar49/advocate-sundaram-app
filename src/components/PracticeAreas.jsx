@@ -17,12 +17,12 @@ const PracticeAreas = () => {
   const [selectedPractice, setSelectedPractice] = useState(null);
 
   const practices = [
-    { num: '01', icon: <AccountBalanceIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('p1Title'), desc: t('p1Desc'), details: 'Specialized advocacy in District Courts, High Court legal petitions, civil title deeds, land acquisition, and stay order applications with decades of trial experience.' },
-    { num: '02', icon: <GavelIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('p2Title'), desc: t('p2Desc'), details: 'Strategic defense for criminal trials, bail applications, anticipatory bail, IPC/BNS offenses, police inquiry defense, and criminal appeals.' },
-    { num: '03', icon: <DescriptionIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('p3Title'), desc: t('p3Desc'), details: 'Drafting sale deeds, partition deeds, legal notices, Will registration, encumbrance verification, and court representation for property disputes.' },
-    { num: '04', icon: <Diversity1Icon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('p4Title'), desc: t('p4Desc'), details: 'Compassionate and firm guidance in marital disputes, divorce petitions, child custody, maintenance, domestic violence protection, and family settlement agreements.' },
-    { num: '05', icon: <HandshakeIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('p5Title'), desc: t('p5Desc'), details: 'Professional arbitration, pre-litigation mediation, out-of-court dispute settlement, partnership contracts, and business agreement drafting.' },
-    { num: '06', icon: <BalanceIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('p6Title'), desc: t('p6Desc'), details: 'Consumer protection court representation, cheque bounce (Sec 138 NI Act) notices, recovery suits, and legal audit of commercial contracts.' },
+    { num: '01', icon: <AccountBalanceIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('p1Title'), desc: t('p1Desc'), details: t('p1Details') },
+    { num: '02', icon: <GavelIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('p2Title'), desc: t('p2Desc'), details: t('p2Details') },
+    { num: '03', icon: <DescriptionIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('p3Title'), desc: t('p3Desc'), details: t('p3Details') },
+    { num: '04', icon: <Diversity1Icon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('p4Title'), desc: t('p4Desc'), details: t('p4Details') },
+    { num: '05', icon: <HandshakeIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('p5Title'), desc: t('p5Desc'), details: t('p5Details') },
+    { num: '06', icon: <BalanceIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('p6Title'), desc: t('p6Desc'), details: t('p6Details') },
   ];
 
   return (

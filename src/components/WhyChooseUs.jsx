@@ -12,10 +12,10 @@ const WhyChooseUs = () => {
   const { t } = useLanguage();
 
   const pillars = [
-    { num: '01', icon: <VerifiedIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('pil1Title'), desc: t('pil1Desc'), stat: '100% Bar Certified' },
-    { num: '02', icon: <AutoAwesomeIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('pil2Title'), desc: t('pil2Desc'), stat: '15+ Yrs Experience' },
-    { num: '03', icon: <LockIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('pil3Title'), desc: t('pil3Desc'), stat: '100% Confidential' },
-    { num: '04', icon: <AccountBalanceIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('pil4Title'), desc: t('pil4Desc'), stat: 'High Court & District Courts' },
+    { num: '01', icon: <VerifiedIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('pil1Title'), desc: t('pil1Desc'), stat: t('pil1Stat') },
+    { num: '02', icon: <AutoAwesomeIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('pil2Title'), desc: t('pil2Desc'), stat: t('pil2Stat') },
+    { num: '03', icon: <LockIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('pil3Title'), desc: t('pil3Desc'), stat: t('pil3Stat') },
+    { num: '04', icon: <AccountBalanceIcon sx={{ fontSize: '2.2rem', color: 'var(--gold-accent)' }} />, title: t('pil4Title'), desc: t('pil4Desc'), stat: t('pil4Stat') },
   ];
 
   return (
