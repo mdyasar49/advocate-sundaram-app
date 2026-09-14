@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
-import { Box, CardContent, Typography, Dialog, DialogTitle, DialogContent, DialogActions, Button, Stack } from '@mui/material';
+import { Box, CardContent, Typography, Stack } from '@mui/material';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import GavelIcon from '@mui/icons-material/Gavel';
 import DescriptionIcon from '@mui/icons-material/Description';
@@ -10,9 +10,9 @@ import HandshakeIcon from '@mui/icons-material/Handshake';
 import BalanceIcon from '@mui/icons-material/Balance';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import CloseIcon from '@mui/icons-material/Close';
 import SectionHeader from './common/SectionHeader';
 import GlassCard from './common/GlassCard';
+import LuxuryModal from './common/LuxuryModal';
 
 const PracticeAreas = () => {
   const { t } = useLanguage();
@@ -45,7 +45,7 @@ const PracticeAreas = () => {
             {/* Reusable GlassCard Component */}
             <GlassCard
               onClick={() => setSelectedPractice(item)}
-              className="group relative h-full flex flex-col justify-between"
+              className="group relative h-full flex flex-col justify-between cursor-pointer"
             >
               <CardContent sx={{ p: 0, '&:last-child': { pb: 0 } }} className="h-full flex flex-col justify-between">
                 <div>
@@ -75,91 +75,58 @@ const PracticeAreas = () => {
         ))}
       </div>
 
-      {/* Interactive Material UI Dialog Modal */}
-      <Dialog
-        open={Boolean(selectedPractice)}
+      {/* Redesigned Luxury Practice Area Detail Popup Modal */}
+      <LuxuryModal
+        isOpen={Boolean(selectedPractice)}
         onClose={() => setSelectedPractice(null)}
-        maxWidth="sm"
-        fullWidth
-        PaperProps={{
-          sx: {
-            background: '#0a101d',
-            border: '1px solid rgba(212, 175, 55, 0.4)',
-            borderRadius: '24px',
-            p: 1.5,
-            boxShadow: '0 25px 60px rgba(0, 0, 0, 0.8)',
-            backdropFilter: 'blur(20px)',
-          },
-        }}
+        icon={selectedPractice?.icon}
+        title={selectedPractice?.title}
+        subtitle="TRICHY DISTRICT COURTS & HIGH COURT ADVOCATE"
+        badgeTag="PRACTICE AREA LEGAL DETAIL"
+        actions={
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 w-full pt-3">
+            <button
+              onClick={() => setSelectedPractice(null)}
+              className="w-full sm:w-auto bg-[#0c0b0a] hover:bg-[#1f1d1b] border border-[#383020] text-[#e8e4db] font-bold text-xs tracking-[2px] uppercase px-6 py-3.5 rounded-sm cursor-pointer transition-all duration-200"
+            >
+              {t('modalClose')}
+            </button>
+            <a
+              href={`https://wa.me/918838828632?text=Hello%20Advocate%20Sundaram%20Sir,%20I%20need%20legal%20consultation%20regarding%20${encodeURIComponent(selectedPractice?.title || '')}.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 hover:from-amber-500 hover:to-amber-400 text-black font-extrabold text-xs tracking-[2px] uppercase px-8 py-3.5 rounded-sm shadow-[0_4px_20px_rgba(212,175,55,0.4)] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <WhatsAppIcon sx={{ fontSize: '1.2rem' }} />
+              <span>{t('modalWa')}</span>
+            </a>
+          </div>
+        }
       >
         {selectedPractice && (
-          <>
-            <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', pb: 1, pt: 2, px: 3 }}>
-              <Stack direction="row" alignItems="center" spacing={1.5}>
-                <div
-                  className="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center flex-shrink-0"
-                  style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '44px', height: '44px' }}
-                >
-                  {selectedPractice.icon}
-                </div>
-                <Typography variant="h6" component="span" sx={{ color: '#fff', fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.2rem' }}>
-                  {selectedPractice.title}
-                </Typography>
-              </Stack>
-              <Button onClick={() => setSelectedPractice(null)} sx={{ color: 'var(--text-muted)', minWidth: 'auto', p: 0.5 }}>
-                <CloseIcon />
-              </Button>
-            </DialogTitle>
+          <div>
+            {/* Detailed Description */}
+            <p className="text-[#a8a49c] text-sm sm:text-base leading-relaxed font-sans mb-6 font-normal">
+              {selectedPractice.details}
+            </p>
 
-            <DialogContent dividers sx={{ borderColor: 'rgba(255, 255, 255, 0.1)', py: 2.5, px: 3 }}>
-              <Typography variant="body1" sx={{ color: '#cbd5e1', lineHeight: 1.7, mb: 2.5, fontSize: '0.95rem' }}>
-                {selectedPractice.details}
-              </Typography>
-              <div
-                className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/25"
-                style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <AccountBalanceIcon sx={{ fontSize: '1.25rem', color: 'var(--gold-accent)', flexShrink: 0 }} />
-                  <Typography variant="subtitle2" sx={{ color: 'var(--gold-accent)', fontWeight: 700, lineHeight: 1.3, m: 0, fontSize: '0.92rem' }}>
-                    {t('modalLegalRepTitle')}
-                  </Typography>
-                </div>
-                <Typography variant="caption" sx={{ color: 'var(--text-muted)', display: 'block', lineHeight: 1.5, pl: '28px', fontSize: '0.82rem' }}>
-                  {t('modalLegalRepDesc')}
-                </Typography>
+            {/* Legal Representation Badge Card */}
+            <div className="bg-[#121110] border border-[#383020] rounded-sm p-4 sm:p-5 flex items-start gap-4 mb-6 shadow-inner">
+              <div className="w-10 h-10 rounded-sm bg-amber-500/10 border border-amber-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <AccountBalanceIcon sx={{ fontSize: '1.25rem', color: '#f59e0b' }} />
               </div>
-            </DialogContent>
-
-            <DialogActions sx={{ pt: 2, px: 2 }}>
-              <Button onClick={() => setSelectedPractice(null)} sx={{ color: 'var(--text-muted)', textTransform: 'none' }}>
-                {t('modalClose')}
-              </Button>
-              <Button
-                component="a"
-                href={`https://wa.me/918838828632?text=Hello%20Advocate%20Sundaram%20Sir,%20I%20need%20legal%20consultation%20regarding%20${encodeURIComponent(selectedPractice.title)}.`}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="contained"
-                startIcon={<WhatsAppIcon />}
-                sx={{
-                  background: 'var(--gold-gradient)',
-                  color: '#080d1a',
-                  fontWeight: 700,
-                  borderRadius: '30px',
-                  px: 3,
-                  py: 1,
-                  textTransform: 'none',
-                  boxShadow: '0 4px 20px var(--gold-glow)',
-                  '&:hover': { background: 'var(--gold-gradient)', boxShadow: '0 6px 25px rgba(212, 175, 55, 0.5)' },
-                }}
-              >
-                {t('modalWa')}
-              </Button>
-            </DialogActions>
-          </>
+              <div>
+                <h4 className="text-sm font-semibold font-serif text-[#e8e4db] mb-1">
+                  {t('modalLegalRepTitle')}
+                </h4>
+                <p className="text-xs text-[#a8a49c] leading-relaxed font-sans">
+                  {t('modalLegalRepDesc')}
+                </p>
+              </div>
+            </div>
+          </div>
         )}
-      </Dialog>
+      </LuxuryModal>
     </Box>
   );
 };
