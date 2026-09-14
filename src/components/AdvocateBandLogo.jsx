@@ -18,9 +18,9 @@ const AdvocateBandLogo = ({ size = 48, className = '' }) => {
           <stop offset="100%" stopColor="#7a4f00" />
         </linearGradient>
 
-        {/* Curved Text Paths */}
+        {/* Curved Text Paths: Top Arc Clockwise, Bottom Arc Upright Counter-Clockwise */}
         <path id="topArcPath" d="M 22,60 A 38,38 0 1,1 98,60" fill="none" />
-        <path id="bottomArcPath" d="M 98,60 A 38,38 0 0,1 22,60" fill="none" />
+        <path id="bottomArcPath" d="M 22,60 A 38,38 0 0,0 98,60" fill="none" />
       </defs>
 
       {/* Dark Outer Shield Background */}
@@ -44,7 +44,7 @@ const AdvocateBandLogo = ({ size = 48, className = '' }) => {
         </textPath>
       </text>
 
-      {/* Curved Subtitle Typography along Bottom Arc: TRICHY CITY COURT */}
+      {/* Curved Subtitle Typography along Bottom Arc: TRICHY CITY COURT (Upright Reading) */}
       <text fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700">
         <textPath
           href="#bottomArcPath"
