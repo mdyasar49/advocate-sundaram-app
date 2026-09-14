@@ -3,7 +3,6 @@ import './index.css';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import { LanguageProvider } from './context/LanguageContext';
 
-import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import PracticeAreas from './components/PracticeAreas';
@@ -53,7 +52,6 @@ function App() {
       <CssBaseline />
       <LanguageProvider>
         <div className="app-root text-slate-100 bg-[#080d1a] min-h-screen selection:bg-amber-500 selection:text-slate-950">
-          <TopBar />
           <Navbar />
           <Hero />
           <PracticeAreas />

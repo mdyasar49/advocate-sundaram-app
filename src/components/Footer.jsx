@@ -19,8 +19,8 @@ const Footer = () => {
   return (
     <footer className="site-footer">
       <div className="container">
-        {/* Mobile & Tablet TopBar Relocated Info Banner (Hidden on Desktop/Laptop >= 1024px) */}
-        <div className="block lg:hidden mb-8 p-4 rounded-2xl bg-[#0b1329] border border-amber-500/30 shadow-lg shadow-black/40">
+        {/* Mobile & Tablet TopBar Relocated Info Banner (Hidden on Desktop/Laptop >= 1280px) */}
+        <div className="block xl:hidden mb-8 p-4 rounded-2xl bg-[#0b1329] border border-amber-500/30 shadow-lg shadow-black/40">
           <div className="flex flex-col gap-3 text-center items-center">
             <div className="flex items-center justify-center gap-2 text-slate-300 text-xs sm:text-sm font-medium">
               <BalanceIcon sx={{ color: 'var(--gold-accent)', fontSize: '1.1rem' }} />

@@ -6,6 +6,7 @@ import AdvocateBandLogo from './AdvocateBandLogo';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import TopBar from './TopBar';
 
 const Navbar = () => {
   const { lang, setLang, t } = useLanguage();
@@ -20,7 +21,8 @@ const Navbar = () => {
   };
 
   return (
-    <header>
+    <header className="sticky top-0 z-[1000] w-full bg-[#080d1a]/95 backdrop-blur-md border-b border-amber-500/20">
+      <TopBar />
       <div className="container navbar">
         <motion.a
           href="#"
