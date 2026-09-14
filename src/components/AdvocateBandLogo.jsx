@@ -8,53 +8,51 @@ const AdvocateBandLogo = ({ size = 48, className = '' }) => {
       width={size}
       height={size}
       className={className}
-      style={{ verticalAlign: 'middle', display: 'inline-block', filter: 'drop-shadow(0 2px 8px rgba(212, 175, 55, 0.3))' }}
+      style={{ verticalAlign: 'middle', display: 'inline-block', filter: 'drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35))' }}
     >
       <defs>
         <linearGradient id="goldLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#f8ecbf" />
-          <stop offset="35%" stopColor="#d4af37" />
-          <stop offset="70%" stopColor="#b8860b" />
-          <stop offset="100%" stopColor="#8a5a00" />
+          <stop offset="0%" stopColor="#fff1c1" />
+          <stop offset="40%" stopColor="#d4af37" />
+          <stop offset="75%" stopColor="#b8860b" />
+          <stop offset="100%" stopColor="#7a4f00" />
         </linearGradient>
 
-        {/* Arc Paths for Curved Text */}
-        <path id="topArcPath" d="M 21,60 A 39,39 0 1,1 99,60" fill="none" />
-        <path id="bottomArcPath" d="M 99,60 A 39,39 0 0,1 21,60" fill="none" />
+        {/* Curved Text Paths */}
+        <path id="topArcPath" d="M 22,60 A 38,38 0 1,1 98,60" fill="none" />
+        <path id="bottomArcPath" d="M 98,60 A 38,38 0 0,1 22,60" fill="none" />
       </defs>
 
       {/* Dark Outer Shield Background */}
       <circle cx="60" cy="60" r="57" fill="#060a14" stroke="url(#goldLogoGrad)" strokeWidth="3.5" />
       
       {/* Golden Filigree Inner Dash Ring */}
-      <circle cx="60" cy="60" r="51.5" fill="none" stroke="url(#goldLogoGrad)" strokeWidth="1" strokeDasharray="4 2.5" opacity="0.6" />
-      <circle cx="60" cy="60" r="48" fill="none" stroke="#d4af37" strokeWidth="0.6" opacity="0.3" />
+      <circle cx="60" cy="60" r="51.5" fill="none" stroke="url(#goldLogoGrad)" strokeWidth="1" strokeDasharray="4 2.5" opacity="0.65" />
+      <circle cx="60" cy="60" r="48" fill="none" stroke="#d4af37" strokeWidth="0.6" opacity="0.35" />
 
       {/* Curved Name Typography along Top Arc: ADVOCATE SUNDARAM */}
-      <text fontFamily="'Cinzel', 'Mukta Malar', serif">
+      <text fontFamily="system-ui, -apple-system, 'Cinzel', serif" fontWeight="800">
         <textPath
           href="#topArcPath"
           startOffset="50%"
           textAnchor="middle"
           fill="url(#goldLogoGrad)"
-          fontSize="9.2"
-          fontWeight="800"
-          letterSpacing="1.4px"
+          fontSize="8.5"
+          letterSpacing="0.4px"
         >
           ADVOCATE SUNDARAM
         </textPath>
       </text>
 
-      {/* Curved Subtitle Typography along Bottom Arc: TRICHY COURT */}
-      <text fontFamily="'Plus Jakarta Sans', sans-serif">
+      {/* Curved Subtitle Typography along Bottom Arc: TRICHY CITY COURT */}
+      <text fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700">
         <textPath
           href="#bottomArcPath"
           startOffset="50%"
           textAnchor="middle"
           fill="#cbd5e1"
-          fontSize="6.8"
-          fontWeight="700"
-          letterSpacing="1.2px"
+          fontSize="6.5"
+          letterSpacing="0.4px"
           opacity="0.9"
         >
           TRICHY CITY COURT

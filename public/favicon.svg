@@ -1,27 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="64" height="64">
   <defs>
     <linearGradient id="goldLogoGradFav" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f8ecbf" />
-      <stop offset="35%" stop-color="#d4af37" />
-      <stop offset="70%" stop-color="#b8860b" />
-      <stop offset="100%" stop-color="#8a5a00" />
+      <stop offset="0%" stop-color="#fff1c1" />
+      <stop offset="40%" stop-color="#d4af37" />
+      <stop offset="75%" stop-color="#b8860b" />
+      <stop offset="100%" stop-color="#7a4f00" />
     </linearGradient>
 
-    <path id="topArcFav" d="M 21,60 A 39,39 0 1,1 99,60" fill="none" />
-    <path id="bottomArcFav" d="M 99,60 A 39,39 0 0,1 21,60" fill="none" />
+    <path id="topArcFav" d="M 22,60 A 38,38 0 1,1 98,60" fill="none" />
+    <path id="bottomArcFav" d="M 98,60 A 38,38 0 0,1 22,60" fill="none" />
   </defs>
 
   <circle cx="60" cy="60" r="57" fill="#060a14" stroke="url(#goldLogoGradFav)" stroke-width="3.5" />
-  <circle cx="60" cy="60" r="51.5" fill="none" stroke="url(#goldLogoGradFav)" stroke-width="1" stroke-dasharray="4 2.5" opacity="0.6" />
+  <circle cx="60" cy="60" r="51.5" fill="none" stroke="url(#goldLogoGradFav)" stroke-width="1" stroke-dasharray="4 2.5" opacity="0.65" />
+  <circle cx="60" cy="60" r="48" fill="none" stroke="#d4af37" stroke-width="0.6" opacity="0.35" />
 
-  <text font-family="'Cinzel', serif">
-    <textPath href="#topArcFav" startOffset="50%" text-anchor="middle" fill="url(#goldLogoGradFav)" font-size="9.2" font-weight="800" letter-spacing="1.4px">
+  <text font-family="system-ui, -apple-system, sans-serif" font-weight="800">
+    <textPath href="#topArcFav" startOffset="50%" text-anchor="middle" fill="url(#goldLogoGradFav)" font-size="8.5" letter-spacing="0.4px">
       ADVOCATE SUNDARAM
     </textPath>
   </text>
 
-  <text font-family="sans-serif">
-    <textPath href="#bottomArcFav" startOffset="50%" text-anchor="middle" fill="#cbd5e1" font-size="6.8" font-weight="700" letter-spacing="1.2px">
+  <text font-family="system-ui, -apple-system, sans-serif" font-weight="700">
+    <textPath href="#bottomArcFav" startOffset="50%" text-anchor="middle" fill="#cbd5e1" font-size="6.5" letter-spacing="0.4px" opacity="0.9">
       TRICHY CITY COURT
     </textPath>
   </text>
