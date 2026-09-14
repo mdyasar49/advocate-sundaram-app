@@ -9,6 +9,7 @@ import PracticeAreas from './components/PracticeAreas';
 import WhyChooseUs from './components/WhyChooseUs';
 import ConsultationForm from './components/ConsultationForm';
 import Footer from './components/Footer';
+import DisclaimerModal from './components/DisclaimerModal';
 
 const luxuryLegalTheme = createTheme({
   palette: {
@@ -58,6 +59,7 @@ function App() {
           <WhyChooseUs />
           <ConsultationForm />
           <Footer />
+          <DisclaimerModal />
         </div>
       </LanguageProvider>
     </ThemeProvider>

@@ -93,6 +93,9 @@ export const translations = {
     modalWa: 'Consult on WhatsApp',
     quoteText: '"Integrity, Dignity, & Justice — The Hallmark of Trusted Legal Advocacy."',
     ratingText: '5.0 / 5.0 Rating by Trichy Clients',
+    disclaimerTitle: 'Legal Disclaimer',
+    disclaimerText: 'The Bar Council of India does not permit advertisement or solicitation by advocates in any form or manner. By accessing this website, you acknowledge that you are seeking information relating to Advocate S. Sundaram of your own accord and that there has been no solicitation by Advocate S. Sundaram or his associates. The content of this website is for informational purposes only and should not be interpreted as legal advice.',
+    disclaimerBtn: 'I UNDERSTAND & PROCEED',
   },
 
   ta: {
@@ -189,6 +192,9 @@ export const translations = {
     modalWa: 'வாட்ஸ்அப் மூலம் ஆலோசனை',
     quoteText: '"கம்பீரம் • நீதி • நம்பிக்கை — நேர்மையான சட்ட வழிகாட்டுதலின் அடையாளம்."',
     ratingText: '5.0 / 5.0 மதிப்பீடு (திருச்சி வாடிக்கையாளர்கள்)',
+    disclaimerTitle: 'சட்டப்பூர்வ நிபந்தனைகள்',
+    disclaimerText: 'இந்திய வழக்கறிஞர் கழக (Bar Council of India) விதிகளின்படி, வழக்கறிஞர்கள் விளம்பரம் செய்வதோ அல்லது வாடிக்கையாளர்களைத் தூண்டுவதோ தடை செய்யப்பட்டுள்ளது. இந்த இணையதளத்தை அணுகுவதன் மூலம், நீங்கள் உங்கள் சொந்த விருப்பத்தின் பேரில் வழக்கறிஞர் எஸ். சுந்தரம் பற்றிய தகவல்களைப் பெற விரும்புகிறீர்கள் என்பதை ஒப்புக்கொள்கிறீர்கள். இந்த இணையதளத்தில் உள்ள உள்ளடக்கங்கள் தகவல் நோக்கங்களுக்காக மட்டுமே.',
+    disclaimerBtn: 'நான் புரிந்துகொண்டேன் & தொடர்கிறேன்',
   },
 
   hi: {

@@ -235,8 +235,15 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom Bar */}
-        <div className="footer-bottom">
+        <div className="footer-bottom flex flex-wrap items-center justify-between gap-3 text-xs pt-4 border-t border-white/10">
           <p>{t('footerCopyright')}</p>
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new CustomEvent('openDisclaimerModal'))}
+            className="text-amber-400/90 hover:text-amber-300 underline font-semibold transition-all cursor-pointer"
+          >
+            ⚖️ {t('disclaimerTitle')}
+          </button>
         </div>
       </div>
     </footer>
