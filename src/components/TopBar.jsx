@@ -21,7 +21,7 @@ const TopBar = () => {
           </Stack>
         </motion.div>
 
-        <motion.div className="contact-quick" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
+        <motion.div className="contact-quick flex flex-wrap items-center gap-3 justify-center" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
           {/* MUI 5-Language Native Selector */}
           <Stack direction="row" spacing={0.5} sx={{ background: 'rgba(212, 175, 55, 0.12)', border: '1px solid var(--gold-accent)', borderRadius: '20px', p: '2px' }}>
             {[
