@@ -7,7 +7,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const TopBar = () => {
-  const { lang, toggleLanguage, t } = useLanguage();
+  const { lang, setLang, toggleLanguage, t } = useLanguage();
 
   return (
     <Box className="top-bar">
