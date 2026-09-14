@@ -10,7 +10,7 @@ const TopBar = () => {
   const { lang, setLang, toggleLanguage, t } = useLanguage();
 
   return (
-    <Box className="top-bar">
+    <Box className="top-bar hidden lg:block">
       <Box className="container top-bar-wrapper">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
           <Stack direction="row" alignItems="center" spacing={1}>

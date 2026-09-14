@@ -9,6 +9,8 @@ import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
 import BusinessIcon from '@mui/icons-material/Business';
 import MapIcon from '@mui/icons-material/Map';
 import ExploreIcon from '@mui/icons-material/Explore';
+import PhoneIcon from '@mui/icons-material/Phone';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const Footer = () => {
   const { lang, setLang, t } = useLanguage();
@@ -17,6 +19,36 @@ const Footer = () => {
   return (
     <footer className="site-footer">
       <div className="container">
+        {/* Mobile & Tablet TopBar Relocated Info Banner (Hidden on Desktop/Laptop >= 1024px) */}
+        <div className="block lg:hidden mb-8 p-4 rounded-2xl bg-[#0b1329] border border-amber-500/30 shadow-lg shadow-black/40">
+          <div className="flex flex-col gap-3 text-center items-center">
+            <div className="flex items-center justify-center gap-2 text-slate-300 text-xs sm:text-sm font-medium">
+              <BalanceIcon sx={{ color: 'var(--gold-accent)', fontSize: '1.1rem' }} />
+              <span>{t('topBarText')}</span>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-1">
+              <a
+                href="tel:+918838828632"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold hover:bg-amber-500/20 transition-all"
+              >
+                <PhoneIcon sx={{ fontSize: '0.95rem' }} />
+                <span>+91 88388 28632</span>
+              </a>
+
+              <a
+                href="https://wa.me/918838828632"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold hover:bg-emerald-500/20 transition-all"
+              >
+                <WhatsAppIcon sx={{ fontSize: '1rem' }} />
+                <span>{t('topWa')}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
         <div className="footer-grid">
           {/* Column 1: Brand Info & Language Translate */}
           <div className="footer-col brand-col">
