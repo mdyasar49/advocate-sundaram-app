@@ -109,12 +109,15 @@ const PracticeAreas = () => {
       >
         {selectedPractice && (
           <>
-            <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', pb: 1 }}>
+            <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', pb: 1, pt: 2, px: 3 }}>
               <Stack direction="row" alignItems="center" spacing={1.5}>
-                <Box className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center">
+                <div
+                  className="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center flex-shrink-0"
+                  style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '44px', height: '44px' }}
+                >
                   {selectedPractice.icon}
-                </Box>
-                <Typography variant="h6" component="span" sx={{ color: '#fff', fontFamily: 'var(--font-heading)', fontWeight: 700 }}>
+                </div>
+                <Typography variant="h6" component="span" sx={{ color: '#fff', fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.2rem' }}>
                   {selectedPractice.title}
                 </Typography>
               </Stack>
@@ -123,18 +126,24 @@ const PracticeAreas = () => {
               </Button>
             </DialogTitle>
 
-            <DialogContent dividers sx={{ borderColor: 'rgba(255, 255, 255, 0.1)', py: 2 }}>
-              <Typography variant="body1" sx={{ color: '#cbd5e1', lineHeight: 1.7, mb: 2 }}>
+            <DialogContent dividers sx={{ borderColor: 'rgba(255, 255, 255, 0.1)', py: 2.5, px: 3 }}>
+              <Typography variant="body1" sx={{ color: '#cbd5e1', lineHeight: 1.7, mb: 2.5, fontSize: '0.95rem' }}>
                 {selectedPractice.details}
               </Typography>
-              <Box className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20">
-                <Typography variant="subtitle2" sx={{ color: 'var(--gold-accent)', fontWeight: 700, mb: 0.5 }}>
-                  🏛️ Legal Representation & Advice
-                </Typography>
-                <Typography variant="caption" sx={{ color: 'var(--text-muted)', display: 'block' }}>
+              <div
+                className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/25"
+                style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <AccountBalanceIcon sx={{ fontSize: '1.25rem', color: 'var(--gold-accent)', flexShrink: 0 }} />
+                  <Typography variant="subtitle2" sx={{ color: 'var(--gold-accent)', fontWeight: 700, lineHeight: 1.3, m: 0, fontSize: '0.92rem' }}>
+                    Legal Representation & Advice
+                  </Typography>
+                </div>
+                <Typography variant="caption" sx={{ color: 'var(--text-muted)', display: 'block', lineHeight: 1.5, pl: '28px', fontSize: '0.82rem' }}>
                   Direct consultation with Advocate Sundaram, Trichy District Courts & High Court Advocate. Confidential & expert legal counsel.
                 </Typography>
-              </Box>
+              </div>
             </DialogContent>
 
             <DialogActions sx={{ pt: 2, px: 2 }}>
