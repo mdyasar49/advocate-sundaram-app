@@ -47,7 +47,7 @@ const PracticeAreas = () => {
               onClick={() => setSelectedPractice(item)}
               className="group relative h-full flex flex-col justify-between cursor-pointer"
             >
-              <CardContent sx={{ p: 0, '&:last-child': { pb: 0 } }} className="h-full flex flex-col justify-between">
+              <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }} className="h-full flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-5 w-full">
                     <div className="practice-icon w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center group-hover:bg-amber-500/20 group-hover:border-amber-400 transition-all shadow-lg shadow-amber-500/10 flex-shrink-0">
@@ -65,7 +65,7 @@ const PracticeAreas = () => {
                   </Typography>
                 </div>
 
-                <Stack direction="row" alignItems="center" spacing={1} sx={{ color: 'var(--gold-accent)', fontSize: '0.85rem', fontWeight: 700, mt: 'auto' }}>
+                <Stack direction="row" alignItems="center" spacing={1} sx={{ color: 'var(--gold-accent)', fontSize: '0.85rem', fontWeight: 700, mt: 'auto', pt: 2.5, pb: 0.5 }}>
                   <span>{t('btnViewDetails')}</span>
                   <ArrowForwardIcon sx={{ fontSize: '1rem', transition: 'transform 0.2s', className: 'group-hover:translate-x-1' }} />
                 </Stack>

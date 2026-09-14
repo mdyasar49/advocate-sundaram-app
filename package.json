@@ -1,7 +1,10 @@
 {
   "name": "advocate-sundaram-app",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Advocate Sundaram Legal Advisory Web Application - Designed & Developed by Mohamed Yasar",
+  "author": "Mohamed Yasar",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",

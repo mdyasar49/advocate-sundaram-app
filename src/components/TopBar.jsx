@@ -6,6 +6,7 @@ import BalanceIcon from '@mui/icons-material/Balance';
 import PhoneIcon from '@mui/icons-material/Phone';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LanguageSwitcher from './common/LanguageSwitcher';
+import GoldButton from './common/GoldButton';
 
 const TopBar = () => {
   const { t } = useLanguage();
@@ -34,15 +35,15 @@ const TopBar = () => {
             +91 88388 28632
           </Button>
 
-          <Button
+          <GoldButton
             href="https://wa.me/918838828632"
             target="_blank"
             rel="noopener noreferrer"
-            startIcon={<WhatsAppIcon sx={{ fontSize: '1.1rem', color: '#25D366' }} />}
-            sx={{ color: 'var(--text-muted)', textTransform: 'none', fontSize: '0.82rem', p: 0, '&:hover': { color: 'var(--gold-accent)' } }}
+            icon={WhatsAppIcon}
+            size="sm"
           >
             {t('topWa')}
-          </Button>
+          </GoldButton>
         </motion.div>
       </Box>
     </Box>
@@ -50,3 +51,4 @@ const TopBar = () => {
 };
 
 export default TopBar;
+

@@ -8,6 +8,7 @@ import CategoryIcon from '@mui/icons-material/Category';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import MessageIcon from '@mui/icons-material/Message';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import GoldButton from './common/GoldButton';
 
 const ConsultationForm = () => {
   const { t } = useLanguage();
@@ -61,7 +62,7 @@ const ConsultationForm = () => {
       </div>
 
       <motion.div
-        className="contact-box max-w-3xl mx-auto backdrop-blur-2xl bg-slate-950/80 border border-amber-500/30 rounded-3xl p-6 sm:p-10 shadow-2xl shadow-black/80 relative overflow-hidden"
+        className="contact-box max-w-3xl mx-auto backdrop-blur-2xl bg-slate-950/80 border border-amber-500/30 rounded-3xl p-7 sm:p-10 md:p-12 shadow-2xl shadow-black/80 relative overflow-hidden"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -225,31 +226,14 @@ const ConsultationForm = () => {
           </div>
 
           <div className="col-span-1 sm:col-span-2 pt-2">
-            <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.98 }}>
-              <Button
-                type="submit"
-                variant="contained"
-                fullWidth
-                size="large"
-                startIcon={<WhatsAppIcon sx={{ fontSize: '1.4rem !important' }} />}
-                sx={{
-                  background: 'var(--gold-gradient)',
-                  color: '#080d1a',
-                  py: 1.8,
-                  borderRadius: '50px',
-                  fontWeight: 800,
-                  fontSize: '1.05rem',
-                  textTransform: 'none',
-                  boxShadow: '0 6px 25px var(--gold-glow)',
-                  '&:hover': {
-                    background: 'var(--gold-gradient)',
-                    boxShadow: '0 8px 30px rgba(212, 175, 55, 0.6)',
-                  },
-                }}
-              >
-                {t('btnSubmit')}
-              </Button>
-            </motion.div>
+            <GoldButton
+              type="submit"
+              fullWidth
+              size="lg"
+              icon={WhatsAppIcon}
+            >
+              {t('btnSubmit')}
+            </GoldButton>
           </div>
         </form>
 

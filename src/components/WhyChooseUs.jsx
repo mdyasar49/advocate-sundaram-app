@@ -40,40 +40,51 @@ const WhyChooseUs = () => {
               className="h-full"
             >
               {/* Reusable GlassCard Component */}
-              <GlassCard className="group relative h-full flex flex-col justify-between text-left">
-                <div>
-                  <div className="flex items-center justify-between mb-5 w-full">
-                    <div className="practice-icon w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center group-hover:bg-amber-500/20 group-hover:border-amber-400 transition-all shadow-lg shadow-amber-500/10 flex-shrink-0">
-                      {item.icon}
+              <GlassCard className="group relative h-full flex flex-col justify-between text-left p-6 sm:p-7 md:p-8">
+                <Box sx={{ p: { xs: 1.5, sm: 2.5 }, borderRadius: 3 }} className="flex flex-col justify-between h-full space-y-4">
+                  <div>
+                    <div className="flex items-center justify-between mb-5 w-full">
+                      <div className="practice-icon w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center group-hover:bg-amber-500/20 group-hover:border-amber-400 transition-all shadow-lg shadow-amber-500/10 flex-shrink-0">
+                        {item.icon}
+                      </div>
+                      <span className="card-num text-4xl font-extrabold text-amber-400/20 group-hover:text-amber-400/30 transition-colors font-serif leading-none">
+                        {item.num}
+                      </span>
                     </div>
-                    <span className="card-num text-4xl font-extrabold text-amber-400/20 group-hover:text-amber-400/30 transition-colors font-serif leading-none">
-                      {item.num}
-                    </span>
+                    <Typography variant="h6" component="h5" sx={{ color: '#fff', fontSize: '1.2rem', fontWeight: 700, mb: 1.5, fontFamily: 'var(--font-heading)', textAlign: 'left' }}>
+                      {item.title}
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: 'var(--text-muted)', fontSize: '0.88rem', lineHeight: 1.65, mb: 3, textAlign: 'left' }}>
+                      {item.desc}
+                    </Typography>
                   </div>
-                  <Typography variant="h6" component="h5" sx={{ color: '#fff', fontSize: '1.2rem', fontWeight: 700, mb: 1, fontFamily: 'var(--font-heading)', textAlign: 'left' }}>
-                    {item.title}
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: 'var(--text-muted)', fontSize: '0.88rem', lineHeight: 1.6, mb: 3, textAlign: 'left' }}>
-                    {item.desc}
-                  </Typography>
-                </div>
 
-                <Chip
-                  label={item.stat}
-                  size="small"
-                  sx={{
-                    background: 'rgba(212, 175, 55, 0.12)',
-                    color: 'var(--gold-accent)',
-                    border: '1px solid rgba(212, 175, 55, 0.3)',
-                    fontWeight: 700,
-                    fontSize: '0.75rem',
-                    py: 0.5,
-                    px: 1,
-                    width: 'fit-content',
-                    mt: 'auto',
-                    alignSelf: 'flex-start',
-                  }}
-                />
+                  <div className="pt-2 mt-auto">
+                    <Chip
+                      label={item.stat}
+                      size="small"
+                      sx={{
+                        background: 'rgba(212, 175, 55, 0.12)',
+                        color: 'var(--gold-accent)',
+                        border: '1px solid rgba(212, 175, 55, 0.3)',
+                        fontWeight: 700,
+                        fontSize: '0.75rem',
+                        py: 0.75,
+                        px: 1.5,
+                        height: 'auto',
+                        width: 'fit-content',
+                        maxWidth: '100%',
+                        alignSelf: 'flex-start',
+                        '& .MuiChip-label': {
+                          px: 1,
+                          py: 0.25,
+                          whiteSpace: 'normal',
+                          textAlign: 'left',
+                        },
+                      }}
+                    />
+                  </div>
+                </Box>
               </GlassCard>
             </motion.div>
           ))}

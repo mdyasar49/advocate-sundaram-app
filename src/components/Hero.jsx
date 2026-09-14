@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
-import { Box, Button, Chip, Stack, Typography, Paper } from '@mui/material';
+import { Box, Chip, Stack, Typography, Paper } from '@mui/material';
 import SecurityIcon from '@mui/icons-material/Security';
 import PhoneIcon from '@mui/icons-material/Phone';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -11,6 +11,7 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
+import GoldButton from './common/GoldButton';
 
 const Hero = () => {
   const { lang, t } = useLanguage();
@@ -52,60 +53,23 @@ const Hero = () => {
           <p className="hero-description">
             {t('heroDesc')}
           </p>
-          <div className="hero-actions">
-            <motion.div className="hero-action-btn-wrap" whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.98 }}>
-              <Button
-                component="a"
-                href="tel:+918838828632"
-                variant="contained"
-                startIcon={<PhoneIcon />}
-                className="btn-call"
-                sx={{
-                  background: 'var(--gold-gradient)',
-                  color: '#080d1a',
-                  fontWeight: 700,
-                  borderRadius: '50px',
-                  px: 3.5,
-                  py: 1.5,
-                  textTransform: 'none',
-                  fontSize: '0.95rem',
-                  boxShadow: '0 4px 20px var(--gold-glow)',
-                  width: '100%',
-                }}
-              >
-                {t('btnCall')}
-              </Button>
-            </motion.div>
+          <div className="hero-actions flex flex-wrap items-center gap-4">
+            <GoldButton
+              href="tel:+918838828632"
+              icon={PhoneIcon}
+              size="md"
+            >
+              {t('btnCall')}
+            </GoldButton>
 
-            <motion.div className="hero-action-btn-wrap" whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.98 }}>
-              <Button
-                component="a"
-                href="https://wa.me/918838828632?text=Hello%20Advocate%20Sundaram%20Sir,%20I%20would%20like%20to%20schedule%20a%20legal%20consultation."
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="contained"
-                startIcon={<WhatsAppIcon />}
-                className="btn-whatsapp"
-                sx={{
-                  background: 'rgba(16, 185, 129, 0.15)',
-                  color: '#10b981',
-                  border: '1px solid #10b981',
-                  fontWeight: 700,
-                  borderRadius: '50px',
-                  px: 3.5,
-                  py: 1.5,
-                  textTransform: 'none',
-                  fontSize: '0.95rem',
-                  width: '100%',
-                  '&:hover': {
-                    background: '#10b981',
-                    color: '#fff',
-                  },
-                }}
-              >
-                {t('btnWa')}
-              </Button>
-            </motion.div>
+            <GoldButton
+              href="https://wa.me/918838828632?text=Hello%20Advocate%20Sundaram%20Sir,%20I%20would%20like%20to%20schedule%20a%20legal%20consultation."
+              target="_blank"
+              icon={WhatsAppIcon}
+              size="md"
+            >
+              {t('btnWa')}
+            </GoldButton>
           </div>
 
           {/* Thirukkural on Justice Banner Card (Multi-Language MUI Chips) */}
@@ -116,8 +80,8 @@ const Hero = () => {
               border: '1px solid rgba(212, 175, 55, 0.3)',
               borderLeft: '4px solid var(--gold-accent)',
               borderRadius: '16px',
-              padding: '1.25rem 1.5rem',
-              marginTop: '2rem',
+              padding: '1.5rem 1.75rem',
+              marginTop: '2.25rem',
               backdropFilter: 'blur(12px)',
               boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
               maxWidth: '100%',

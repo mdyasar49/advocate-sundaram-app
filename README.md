@@ -1,16 +1,75 @@
-# React + Vite
+# ⚖️ Advocate Sundaram — Legal Advisory Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> **Official Web Platform for Advocate S. Sundaram** — Trichy City District Court & Lalgudi Sub-Court Practitioner.
+> Designed, Engineered, and Developed by **Mohamed Yasar**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌟 Key Features
 
-## React Compiler
+- **🌐 Multi-Language Support (5 Languages)**: Instant seamless translation across English, Tamil (தமிழ்), Hindi (हिंदी), Telugu (తెలుగు), and Malayalam (മലയാളം).
+- **✨ Luxury Dark & Gold Aesthetics**: Premium glassmorphic interface built with custom CSS variables, TailWind v4, and Material-UI (MUI).
+- **📱 Responsive Luxury CTA Buttons**: Custom Gold Gradient Pill buttons with dark circular badge icons for direct WhatsApp consultation & phone calling.
+- **📜 Bar Council Compliance & Terms**: Disclaimer Modal for Bar Council of India Rule 36 compliance.
+- **🗺️ Interactive Map Suite**: Instant GPS navigation routing for Jeeyapuram Office & Trichy City District Court Chamber.
+- **⚡ High-Performance Architecture**: Powered by React 19 + Vite + Framer Motion for 60FPS fluid animations.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## 🛠️ Technology Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+| Layer | Technology |
+| :--- | :--- |
+| **Framework** | [React 19](https://react.dev/) |
+| **Build Tool** | [Vite 6](https://vitejs.dev/) |
+| **Styling** | Vanilla CSS + [TailwindCSS v4](https://tailwindcss.com/) + [MUI v9](https://mui.com/) |
+| **Animations** | [Framer Motion](https://www.framer.com/motion/) |
+| **Icons** | Material-UI Icons & FontAwesome 6 |
+| **Deployment** | Cloudflare Pages / Static Web Server |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js**: v18.0.0 or higher
+- **npm**: v9.0.0 or higher
+
+### Installation
+
+```bash
+# Clone repository
+git clone https://github.com/mdyasar49/advocate-sundaram-app.git
+
+# Navigate into directory
+cd advocate-sundaram-app
+
+# Install dependencies
+npm install
+```
+
+### Local Development Server
+
+```bash
+npm run dev
+```
+
+### Production Build & Preview
+
+```bash
+# Generate optimized production bundle
+npm run build
+
+# Preview build locally
+npm run preview
+```
+
+---
+
+## 📄 License & Copyright
+
+**Copyright © 2026 Mohamed Yasar. All Rights Reserved.**
+
+Designed & Developed by **Mohamed Yasar**.
+Licensed under the [MIT License](LICENSE).

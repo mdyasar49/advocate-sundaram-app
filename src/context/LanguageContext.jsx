@@ -5,7 +5,12 @@ const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
   const [lang, setLangState] = useState(() => {
-    return localStorage.getItem('advocate_lang') || 'ta';
+    const params = new URLSearchParams(window.location.search);
+    const urlLang = params.get('lang');
+    if (urlLang && translations[urlLang]) {
+      return urlLang;
+    }
+    return localStorage.getItem('advocate_lang') || 'en';
   });
 
   const setLang = (newLang) => {
