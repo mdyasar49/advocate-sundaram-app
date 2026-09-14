@@ -6,7 +6,7 @@ import BalanceIcon from '@mui/icons-material/Balance';
 import GavelIcon from '@mui/icons-material/Gavel';
 
 const DisclaimerModal = () => {
-  const { lang, t } = useLanguage();
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -32,57 +32,57 @@ const DisclaimerModal = () => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+        <div className="fixed inset-0 z-[999999] flex items-center justify-center p-3 sm:p-5 bg-black/85 backdrop-blur-md">
           {/* Modal Container */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            initial={{ opacity: 0, scale: 0.92, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            transition={{ duration: 0.35, ease: 'easeOut' }}
-            className="w-full max-w-xl bg-[#0e1424] border border-amber-500/35 rounded-2xl p-6 sm:p-9 shadow-2xl shadow-black/90 relative overflow-hidden"
+            exit={{ opacity: 0, scale: 0.92, y: 15 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="w-full max-w-lg sm:max-w-xl max-h-[90vh] bg-[#0b1222] border border-amber-500/40 rounded-2xl p-5 sm:p-8 shadow-2xl shadow-black/95 relative flex flex-col justify-between overflow-y-auto"
           >
             {/* Ambient Background Glow */}
-            <div className="absolute -top-24 -left-24 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -top-20 -left-20 w-44 h-44 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
-            {/* Header: Logo & Brand Name */}
-            <div className="flex items-center gap-4 mb-6 pb-5 border-b border-amber-500/20">
-              <div className="flex-shrink-0 p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30">
-                <AdvocateBandLogo size={38} />
+            <div>
+              {/* Header: Logo & Brand Name */}
+              <div className="flex items-center gap-3.5 mb-5 pb-4 border-b border-amber-500/20">
+                <div className="flex-shrink-0 p-2 rounded-xl bg-amber-500/10 border border-amber-500/30">
+                  <AdvocateBandLogo size={36} />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h2 className="text-base sm:text-xl font-bold tracking-wide text-amber-300 font-serif uppercase truncate">
+                    {t('brandTitle')}
+                  </h2>
+                  <p className="text-[10px] sm:text-xs font-semibold text-slate-300 tracking-wider uppercase mt-0.5">
+                    ADVOCATES & LEGAL CONSULTANTS
+                  </p>
+                </div>
               </div>
-              <div>
-                <h2 className="text-lg sm:text-xl font-bold tracking-wide text-white font-serif uppercase">
-                  {t('brandTitle')}
-                </h2>
-                <p className="text-[11px] sm:text-xs font-bold text-amber-400/90 tracking-widest uppercase mt-0.5">
-                  ADVOCATES & LEGAL CONSULTANTS
-                </p>
+
+              {/* Modal Title */}
+              <div className="flex items-center gap-2.5 mb-3.5">
+                <BalanceIcon sx={{ color: 'var(--gold-accent)', fontSize: '1.3rem' }} />
+                <h3 className="text-lg sm:text-2xl font-bold font-serif text-amber-400">
+                  {t('disclaimerTitle')}
+                </h3>
               </div>
-            </div>
 
-            {/* Modal Title */}
-            <div className="flex items-center gap-2 mb-4">
-              <BalanceIcon sx={{ color: 'var(--gold-accent)', fontSize: '1.4rem' }} />
-              <h3 className="text-xl sm:text-2xl font-bold font-serif text-amber-400">
-                {t('disclaimerTitle')}
-              </h3>
-            </div>
-
-            {/* Disclaimer Content Body */}
-            <div className="text-slate-300 text-xs sm:text-sm leading-relaxed space-y-3 mb-8 font-sans">
-              <p>
-                {t('disclaimerText')}
-              </p>
+              {/* Disclaimer Content Box */}
+              <div className="bg-slate-900/70 border border-amber-500/15 rounded-xl p-4 sm:p-5 mb-6 text-slate-200 text-xs sm:text-sm leading-relaxed font-sans">
+                <p>{t('disclaimerText')}</p>
+              </div>
             </div>
 
             {/* Action Accept Button */}
-            <div className="flex justify-start">
+            <div className="pt-2 flex justify-end">
               <motion.button
-                whileHover={{ scale: 1.03 }}
+                whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={handleAccept}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-600 text-slate-950 font-extrabold text-xs sm:text-sm tracking-wider uppercase shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-all duration-300 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-600 text-slate-950 font-extrabold text-xs sm:text-sm tracking-wide uppercase shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-all duration-300 flex items-center justify-center gap-2 border border-amber-300/40"
               >
-                <GavelIcon sx={{ fontSize: '1.1rem' }} />
+                <GavelIcon sx={{ fontSize: '1.15rem' }} />
                 <span>{t('disclaimerBtn')}</span>
               </motion.button>
             </div>
