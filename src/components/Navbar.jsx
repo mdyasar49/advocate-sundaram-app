@@ -8,7 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
 const Navbar = () => {
-  const { t } = useLanguage();
+  const { lang, setLang, t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -136,6 +136,38 @@ const Navbar = () => {
               >
                 {t('navCta')}
               </Button>
+
+              {/* Mobile Menu 5-Language Switcher */}
+              <div className="mobile-lang-box mt-4 pt-3 border-t border-amber-500/20">
+                <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider block mb-2 text-center">
+                  🌐 Select Language / மொழியைத் தேர்வு செய்க
+                </span>
+                <div className="flex flex-wrap items-center justify-center gap-1.5 p-1.5 rounded-2xl bg-slate-900/90 border border-amber-500/30">
+                  {[
+                    { code: 'ta', label: 'தமிழ்' },
+                    { code: 'en', label: 'English' },
+                    { code: 'hi', label: 'हिंदी' },
+                    { code: 'te', label: 'తెలుగు' },
+                    { code: 'ml', label: 'മലയാളം' },
+                  ].map((item) => (
+                    <button
+                      key={item.code}
+                      type="button"
+                      onClick={() => {
+                        setLang(item.code);
+                        closeMobileMenu();
+                      }}
+                      className={`px-3 py-1.5 text-xs font-bold rounded-xl transition-all duration-200 ${
+                        lang === item.code
+                          ? 'bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-600 text-slate-950 shadow-md shadow-amber-500/30 font-extrabold scale-105'
+                          : 'text-slate-300 hover:text-amber-400 hover:bg-white/10'
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.div>
         )}

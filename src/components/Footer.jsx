@@ -46,6 +46,35 @@ const Footer = () => {
                 <span>{t('topWa')}</span>
               </a>
             </div>
+
+            {/* Mobile TopBar Language Selector */}
+            <div className="w-full mt-2 pt-3 border-t border-slate-800">
+              <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider block mb-2">
+                🌐 Select Language / மொழியைத் தேர்வு செய்க:
+              </span>
+              <div className="flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-2xl bg-slate-900/90 border border-amber-500/30">
+                {[
+                  { code: 'ta', label: 'தமிழ்' },
+                  { code: 'en', label: 'English' },
+                  { code: 'hi', label: 'हिंदी' },
+                  { code: 'te', label: 'తెలుగు' },
+                  { code: 'ml', label: 'മലയാളം' },
+                ].map((item) => (
+                  <button
+                    key={item.code}
+                    type="button"
+                    onClick={() => setLang(item.code)}
+                    className={`px-3 py-1.5 text-xs font-bold rounded-xl transition-all duration-300 ${
+                      lang === item.code
+                        ? 'bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-600 text-slate-950 shadow-md shadow-amber-500/30 scale-105'
+                        : 'text-slate-300 hover:text-amber-300 hover:bg-white/10'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -58,28 +87,28 @@ const Footer = () => {
               {t('footerAbout')}
             </p>
 
-            {/* Native 5-Language Selector */}
-            <div className="footer-lang-box mt-4">
+            {/* Luxury 5-Language Selector */}
+            <div className="footer-lang-box mt-5">
               <span className="lang-box-label mb-2 flex items-center text-xs font-bold text-amber-400 uppercase tracking-wider">
                 <LanguageIcon sx={{ fontSize: '1.1rem', verticalAlign: 'middle', marginRight: '6px', color: 'var(--gold-accent)' }} />
                 Select Language / மொழியைத் தேர்வு செய்க:
               </span>
-              <div className="flex flex-wrap gap-1.5 p-1 rounded-2xl bg-amber-500/10 border border-amber-500/30">
+              <div className="flex flex-wrap gap-2 p-1.5 rounded-2xl bg-slate-900/90 border border-amber-500/30 shadow-lg shadow-black/40 backdrop-blur-md">
                 {[
-                  { code: 'ta', label: '🇮🇳 தமிழ்' },
-                  { code: 'en', label: '🇬🇧 English' },
-                  { code: 'hi', label: '🇮🇳 हिंदी' },
-                  { code: 'te', label: '🇮🇳 తెలుగు' },
-                  { code: 'ml', label: '🇮🇳 മലയാളം' },
+                  { code: 'ta', label: 'தமிழ்' },
+                  { code: 'en', label: 'English' },
+                  { code: 'hi', label: 'हिंदी' },
+                  { code: 'te', label: 'తెలుగు' },
+                  { code: 'ml', label: 'മലയാളം' },
                 ].map((item) => (
                   <button
                     key={item.code}
                     type="button"
                     onClick={() => setLang(item.code)}
-                    className={`px-2.5 py-1 text-xs font-bold rounded-xl transition-all ${
+                    className={`px-3 py-1.5 text-xs font-bold rounded-xl transition-all duration-300 ${
                       lang === item.code
-                        ? 'bg-amber-400 text-slate-950 shadow-md shadow-amber-500/30'
-                        : 'text-slate-300 hover:text-amber-400 hover:bg-white/5'
+                        ? 'bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-600 text-slate-950 shadow-md shadow-amber-500/30 scale-105'
+                        : 'text-slate-300 hover:text-amber-300 hover:bg-white/10'
                     }`}
                   >
                     {item.label}
