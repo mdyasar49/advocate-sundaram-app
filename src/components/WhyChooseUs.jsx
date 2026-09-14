@@ -43,17 +43,20 @@ const WhyChooseUs = () => {
           </h3>
 
           <div
-            className="rating-wrapper flex flex-wrap items-center justify-center gap-2.5 mt-2 w-full text-center mx-auto"
+            className="rating-badge flex flex-wrap items-center justify-center gap-2.5 mt-2.5 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 backdrop-blur-md mx-auto"
             style={{
-              display: 'flex',
+              display: 'inline-flex',
               flexDirection: 'row',
               alignItems: 'center',
               justifyContent: 'center',
               flexWrap: 'wrap',
               gap: '10px',
-              width: '100%',
-              textAlign: 'center',
-              margin: '8px auto 0 auto',
+              padding: '6px 18px',
+              borderRadius: '50px',
+              background: 'rgba(212, 175, 55, 0.08)',
+              border: '1px solid rgba(212, 175, 55, 0.3)',
+              boxShadow: '0 4px 15px rgba(212, 175, 55, 0.1)',
+              margin: '10px auto 0 auto',
             }}
           >
             <Rating
@@ -61,7 +64,7 @@ const WhyChooseUs = () => {
               readOnly
               precision={0.5}
               emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
-              sx={{ display: 'inline-flex', verticalAlign: 'middle' }}
+              sx={{ color: '#f59e0b', fontSize: '1.1rem', display: 'inline-flex', verticalAlign: 'middle' }}
             />
             <Typography
               variant="body2"
@@ -69,13 +72,13 @@ const WhyChooseUs = () => {
               sx={{
                 color: 'var(--gold-accent)',
                 fontWeight: 700,
-                fontSize: '0.9rem',
+                fontSize: '0.88rem',
                 display: 'inline-block',
                 verticalAlign: 'middle',
                 m: 0,
               }}
             >
-              5.0 / 5.0 Rating by Trichy Clients
+              {t('ratingText')}
             </Typography>
           </div>
         </div>
