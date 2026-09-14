@@ -283,10 +283,7 @@ const Hero = () => {
           >
             <FormatQuoteIcon sx={{ color: 'var(--gold-accent)', transform: 'scaleX(-1)', flexShrink: 0 }} />
             <span style={{ wordBreak: 'break-word', maxWidth: '100%' }}>
-              {lang === 'ta'
-                ? '"கம்பீரம் • நீதி • நம்பிக்கை — நேர்மையான சட்ட வழிகாட்டுதலின் அடையாளம்."'
-                : '"Integrity, Dignity, & Justice — The Hallmark of Trusted Legal Advocacy."'
-              }
+              {t('quoteText')}
             </span>
           </div>
         </motion.div>

@@ -85,7 +85,13 @@ export const translations = {
     courtTab: '⚖️ Trichy District Court',
     officeNavBtn: 'GPS Route to Jeeyapuram Office ↗',
     courtNavBtn: 'GPS Route to District Court Chamber ↗',
-    footerCopyright: '© 2026 Advocate S. Sundaram. All Rights Reserved. • Trichy City District Court Practitioner.'
+    footerCopyright: '© 2026 Advocate S. Sundaram. All Rights Reserved. • Trichy City District Court Practitioner.',
+    btnViewDetails: 'View Details & Consultation',
+    modalLegalRepTitle: 'Legal Representation & Advice',
+    modalLegalRepDesc: 'Direct consultation with Advocate Sundaram, Trichy District Courts & High Court Advocate. Confidential & expert legal counsel.',
+    modalClose: 'Close',
+    modalWa: 'Consult on WhatsApp',
+    quoteText: '"Integrity, Dignity, & Justice — The Hallmark of Trusted Legal Advocacy."',
   },
 
   ta: {
@@ -174,7 +180,13 @@ export const translations = {
     courtTab: '⚖️ திருச்சி நீதிமன்றம்',
     officeNavBtn: 'ஜீயபுரம் அலுவலக வழி (GPS) ↗',
     courtNavBtn: 'திருச்சி நீதிமன்ற வழி (GPS) ↗',
-    footerCopyright: '© 2026 வழக்கறிஞர் எஸ். சுந்தரம். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.'
+    footerCopyright: '© 2026 வழக்கறிஞர் எஸ். சுந்தரம். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.',
+    btnViewDetails: 'விவரங்கள் & சட்ட ஆலோசனை',
+    modalLegalRepTitle: 'சட்டப் பிரதிநிதித்துவம் & ஆலோசனை',
+    modalLegalRepDesc: 'வழக்கறிஞர் எஸ். சுந்தரம் அவர்களுடன் நேரடி ஆலோசனை. திருச்சி மாவட்ட நீதிமன்றங்கள் மற்றும் உயர்நீதிமன்ற வழக்கறிஞர்.',
+    modalClose: 'மூடு',
+    modalWa: 'வாட்ஸ்அப் மூலம் ஆலோசனை',
+    quoteText: '"கம்பீரம் • நீதி • நம்பிக்கை — நேர்மையான சட்ட வழிகாட்டுதலின் அடையாளம்."',
   },
 
   hi: {
@@ -263,7 +275,13 @@ export const translations = {
     courtTab: '⚖️ त्रिची जिला न्यायालय',
     officeNavBtn: 'जीयापुरम कार्यालय मार्ग (GPS) ↗',
     courtNavBtn: 'त्रिची जिला न्यायालय मार्ग (GPS) ↗',
-    footerCopyright: '© 2026 अधिवक्ता एस. सुंदरम। सर्वाधिकार सुरक्षित।'
+    footerCopyright: '© 2026 अधिवक्ता एस. सुंदरम। सर्वाधिकार सुरक्षित।',
+    btnViewDetails: 'विवरण एवं कानूनी परामर्श',
+    modalLegalRepTitle: 'कानूनी प्रतिनिधित्व एवं सलाह',
+    modalLegalRepDesc: 'एडवोकेट सुंदरम, त्रिची जिला न्यायालय एवं उच्च न्यायालय अधिवक्ता के साथ सीधा परामर्श। विश्वसनीय कानूनी सलाह।',
+    modalClose: 'बंद करें',
+    modalWa: 'व्हाट्सएप पर परामर्श',
+    quoteText: '"निष्ठा, गरिमा एवं न्याय — विश्वसनीय कानूनी वकालत की पहचान।"'
   },
 
   te: {
@@ -352,7 +370,13 @@ export const translations = {
     courtTab: '⚖️ తిరుచి జిల్లా కోర్టు',
     officeNavBtn: 'జీయాపురం ఆఫీస్ రూట్ (GPS) ↗',
     courtNavBtn: 'తిరుచి జిల్లా కోర్టు రూట్ (GPS) ↗',
-    footerCopyright: '© 2026 అడ్వకేట్ ఎస్. సుందరమ్. సర్వ హక్కులు రక్షించబడ్డాయి.'
+    footerCopyright: '© 2026 అడ్వకేట్ ఎస్. సుందరమ్. సర్వ హక్కులు రక్షించబడ్డాయి.',
+    btnViewDetails: 'వివరాలు & న్యాయ సలహా',
+    modalLegalRepTitle: 'న్యాయ ప్రాతినిధ్యం & సలహా',
+    modalLegalRepDesc: 'అడ్వకేట్ సుందరం గారితో నేరుగా న్యాయ సంప్రదింపులు. తిరుచ్చి జిల్లా కోర్టు & హైకోర్టు న్యాయవాది.',
+    modalClose: 'మూసివేయి',
+    modalWa: 'వాట్సాప్‌లో సంప్రదించండి',
+    quoteText: '"నిజాయితీ, గౌరవం & న్యాయం — విశ్వసనీయ న్యాయసేవకు ప్రతీక."'
   },
 
   ml: {
@@ -441,6 +465,12 @@ export const translations = {
     courtTab: '⚖️ തിരുച്ചി ജില്ലാ കോടതി',
     officeNavBtn: 'ജീയപുരം ഓഫീസ് റൂട്ട് (GPS) ↗',
     courtNavBtn: 'തിരുച്ചി ജില്ലാ കോടതി റൂട്ട് (GPS) ↗',
-    footerCopyright: '© 2026 അഡ്വക്കേറ്റ് എസ്. സുന്ദരം. എല്ലാ അവകാശങ്ങളും സംരക്ഷിതം.'
+    footerCopyright: '© 2026 അഡ്വക്കേറ്റ് എസ്. സുന്ദരം. എല്ലാ അവകാശങ്ങളും സംരക്ഷിതം.',
+    btnViewDetails: 'വിശദാംശങ്ങളും നിയമോപദേശവും',
+    modalLegalRepTitle: 'നിയമ പ്രാതിനിധ്യവും ഉപദേശവും',
+    modalLegalRepDesc: 'അഡ്വക്കേറ്റ് സുന്ദരവുമായി നേരിട്ടുള്ള നിയമ കൂടിയാലോചന. തിരുച്ചി ജില്ലാ കോടതി & ഹൈക്കോടതി അഭിഭാഷകൻ.',
+    modalClose: 'അടയ്ക്കുക',
+    modalWa: 'വാട്ട്‌സ്ആപ്പിൽ ബന്ധപ്പെടുക',
+    quoteText: '"സത്യസന്ധത, മര്യാദ, നീതി — വിശ്വസനീയമായ നിയമസേവനത്തിന്റെ മുഖമുദ്ര."'
   }
 };

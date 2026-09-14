@@ -81,7 +81,7 @@ const PracticeAreas = () => {
                 </div>
 
                 <Stack direction="row" alignItems="center" spacing={1} sx={{ color: 'var(--gold-accent)', fontSize: '0.85rem', fontWeight: 700, mt: 'auto' }}>
-                  <span>View Details & Consultation</span>
+                  <span>{t('btnViewDetails')}</span>
                   <ArrowForwardIcon sx={{ fontSize: '1rem', transition: 'transform 0.2s', className: 'group-hover:translate-x-1' }} />
                 </Stack>
               </CardContent>
@@ -137,18 +137,18 @@ const PracticeAreas = () => {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <AccountBalanceIcon sx={{ fontSize: '1.25rem', color: 'var(--gold-accent)', flexShrink: 0 }} />
                   <Typography variant="subtitle2" sx={{ color: 'var(--gold-accent)', fontWeight: 700, lineHeight: 1.3, m: 0, fontSize: '0.92rem' }}>
-                    Legal Representation & Advice
+                    {t('modalLegalRepTitle')}
                   </Typography>
                 </div>
                 <Typography variant="caption" sx={{ color: 'var(--text-muted)', display: 'block', lineHeight: 1.5, pl: '28px', fontSize: '0.82rem' }}>
-                  Direct consultation with Advocate Sundaram, Trichy District Courts & High Court Advocate. Confidential & expert legal counsel.
+                  {t('modalLegalRepDesc')}
                 </Typography>
               </div>
             </DialogContent>
 
             <DialogActions sx={{ pt: 2, px: 2 }}>
               <Button onClick={() => setSelectedPractice(null)} sx={{ color: 'var(--text-muted)', textTransform: 'none' }}>
-                Close
+                {t('modalClose')}
               </Button>
               <Button
                 component="a"
@@ -169,7 +169,7 @@ const PracticeAreas = () => {
                   '&:hover': { background: 'var(--gold-gradient)', boxShadow: '0 6px 25px rgba(212, 175, 55, 0.5)' },
                 }}
               >
-                Consult on WhatsApp
+                {t('modalWa')}
               </Button>
             </DialogActions>
           </>
