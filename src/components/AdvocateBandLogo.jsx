@@ -20,7 +20,7 @@ const AdvocateBandLogo = ({ size = 48, className = '' }) => {
 
         {/* Curved Text Paths: Top Arc Clockwise, Bottom Arc Upright Counter-Clockwise */}
         <path id="topArcPath" d="M 22,60 A 38,38 0 1,1 98,60" fill="none" />
-        <path id="bottomArcPath" d="M 22,60 A 38,38 0 0,0 98,60" fill="none" />
+        <path id="bottomArcPath" d="M 17.5,60 A 42.5,42.5 0 0,0 102.5,60" fill="none" />
       </defs>
 
       {/* Dark Outer Shield Background */}
@@ -44,7 +44,7 @@ const AdvocateBandLogo = ({ size = 48, className = '' }) => {
         </textPath>
       </text>
 
-      {/* Curved Subtitle Typography along Bottom Arc: TRICHY CITY COURT (Upright Reading) */}
+      {/* Curved Subtitle Typography along Bottom Arc: TRICHY CITY COURT (Upright Reading Below Star) */}
       <text fontFamily="system-ui, -apple-system, sans-serif" fontWeight="700">
         <textPath
           href="#bottomArcPath"
@@ -60,7 +60,7 @@ const AdvocateBandLogo = ({ size = 48, className = '' }) => {
       </text>
 
       {/* Center Group: Scales of Justice + Advocates Collar Neckband */}
-      <g transform="translate(0, 3)">
+      <g transform="translate(0, -1)">
         {/* Scales of Justice Beam & Pillar */}
         <line x1="60" y1="40" x2="60" y2="58" stroke="url(#goldLogoGrad)" strokeWidth="2" strokeLinecap="round" />
         <line x1="42" y1="44" x2="78" y2="44" stroke="url(#goldLogoGrad)" strokeWidth="2" strokeLinecap="round" />

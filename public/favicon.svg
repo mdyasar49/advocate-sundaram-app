@@ -8,7 +8,7 @@
     </linearGradient>
 
     <path id="topArcFav" d="M 22,60 A 38,38 0 1,1 98,60" fill="none" />
-    <path id="bottomArcFav" d="M 22,60 A 38,38 0 0,0 98,60" fill="none" />
+    <path id="bottomArcFav" d="M 17.5,60 A 42.5,42.5 0 0,0 102.5,60" fill="none" />
   </defs>
 
   <circle cx="60" cy="60" r="57" fill="#060a14" stroke="url(#goldLogoGradFav)" stroke-width="3.5" />
@@ -27,7 +27,7 @@
     </textPath>
   </text>
 
-  <g transform="translate(0, 3)">
+  <g transform="translate(0, -1)">
     <line x1="60" y1="40" x2="60" y2="58" stroke="url(#goldLogoGradFav)" stroke-width="2" stroke-linecap="round" />
     <line x1="42" y1="44" x2="78" y2="44" stroke="url(#goldLogoGradFav)" stroke-width="2" stroke-linecap="round" />
     <line x1="42" y1="44" x2="36" y2="52" stroke="url(#goldLogoGradFav)" stroke-width="0.9" />
