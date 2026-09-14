@@ -27,7 +27,10 @@ const PracticeAreas = () => {
 
   return (
     <Box className="section-padding container relative" id="practices">
-      <div className="section-header text-center mb-12 flex flex-col items-center justify-center mx-auto">
+      <div
+        className="section-header text-center mb-12 flex flex-col items-center justify-center mx-auto w-full"
+        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}
+      >
         <Chip
           label={t('tagPractices')}
           sx={{
@@ -38,9 +41,12 @@ const PracticeAreas = () => {
             fontSize: '0.78rem',
             letterSpacing: '1.5px',
             mb: 1.5,
+            mx: 'auto',
           }}
         />
-        <h3 className="section-title text-3xl md:text-4xl font-extrabold text-white font-serif">{t('titlePractices')}</h3>
+        <h3 className="section-title text-3xl md:text-4xl font-extrabold text-white font-serif text-center w-full" style={{ textAlign: 'center' }}>
+          {t('titlePractices')}
+        </h3>
       </div>
 
       <div className="practice-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

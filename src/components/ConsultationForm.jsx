@@ -38,7 +38,10 @@ const ConsultationForm = () => {
 
   return (
     <Box className="section-padding container relative" id="contact">
-      <div className="section-header text-center mb-12 flex flex-col items-center justify-center mx-auto">
+      <div
+        className="section-header text-center mb-12 flex flex-col items-center justify-center mx-auto w-full"
+        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}
+      >
         <Chip
           label={t('tagContact')}
           sx={{
@@ -49,9 +52,12 @@ const ConsultationForm = () => {
             fontSize: '0.78rem',
             letterSpacing: '1.5px',
             mb: 1.5,
+            mx: 'auto',
           }}
         />
-        <h3 className="section-title text-3xl md:text-4xl font-extrabold text-white font-serif">{t('titleContact')}</h3>
+        <h3 className="section-title text-3xl md:text-4xl font-extrabold text-white font-serif text-center w-full" style={{ textAlign: 'center' }}>
+          {t('titleContact')}
+        </h3>
       </div>
 
       <motion.div

@@ -21,7 +21,10 @@ const WhyChooseUs = () => {
   return (
     <Box className="section-padding about-section relative overflow-hidden" id="courts">
       <div className="container relative z-10">
-        <div className="section-header text-center mb-12 flex flex-col items-center justify-center">
+        <div
+          className="section-header text-center mb-12 flex flex-col items-center justify-center mx-auto w-full"
+          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}
+        >
           <Chip
             label={t('tagPillars')}
             sx={{
@@ -32,16 +35,49 @@ const WhyChooseUs = () => {
               fontSize: '0.78rem',
               letterSpacing: '1.5px',
               mb: 1.5,
+              mx: 'auto',
             }}
           />
-          <h3 className="section-title text-3xl md:text-4xl font-extrabold text-white font-serif mb-3 text-center">{t('titlePillars')}</h3>
+          <h3 className="section-title text-3xl md:text-4xl font-extrabold text-white font-serif mb-3 text-center w-full" style={{ textAlign: 'center' }}>
+            {t('titlePillars')}
+          </h3>
 
-          <Box className="flex flex-wrap items-center justify-center gap-2 mt-1 w-full text-center">
-            <Rating value={5} readOnly precision={0.5} emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />} />
-            <Typography variant="body2" sx={{ color: 'var(--gold-accent)', fontWeight: 700, fontSize: '0.9rem', display: 'inline-block' }}>
+          <div
+            className="rating-wrapper flex flex-wrap items-center justify-center gap-2.5 mt-2 w-full text-center mx-auto"
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexWrap: 'wrap',
+              gap: '10px',
+              width: '100%',
+              textAlign: 'center',
+              margin: '8px auto 0 auto',
+            }}
+          >
+            <Rating
+              value={5}
+              readOnly
+              precision={0.5}
+              emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+              sx={{ display: 'inline-flex', verticalAlign: 'middle' }}
+            />
+            <Typography
+              variant="body2"
+              component="span"
+              sx={{
+                color: 'var(--gold-accent)',
+                fontWeight: 700,
+                fontSize: '0.9rem',
+                display: 'inline-block',
+                verticalAlign: 'middle',
+                m: 0,
+              }}
+            >
               5.0 / 5.0 Rating by Trichy Clients
             </Typography>
-          </Box>
+          </div>
         </div>
 
         <div className="pillars-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
