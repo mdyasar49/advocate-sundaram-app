@@ -96,7 +96,8 @@ const WhyChooseUs = () => {
             >
               <Paper
                 elevation={0}
-                className="pillar-box group relative h-full backdrop-blur-xl border border-amber-500/20 bg-slate-900/80 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:border-amber-400 hover:shadow-2xl hover:shadow-amber-500/20"
+                className="pillar-box group relative h-full backdrop-blur-xl border border-amber-500/20 bg-slate-900/80 rounded-2xl p-6 flex flex-col justify-between text-left transition-all duration-300 hover:border-amber-400 hover:shadow-2xl hover:shadow-amber-500/20"
+                style={{ textAlign: 'left' }}
               >
                 <div>
                   <span className="card-num absolute top-5 right-6 text-4xl font-extrabold text-amber-400/10 group-hover:text-amber-400/20 transition-colors font-serif">
@@ -108,10 +109,10 @@ const WhyChooseUs = () => {
                   >
                     {item.icon}
                   </div>
-                  <Typography variant="h6" component="h5" sx={{ color: '#fff', fontSize: '1.2rem', fontWeight: 700, mb: 1, fontFamily: 'var(--font-heading)' }}>
+                  <Typography variant="h6" component="h5" sx={{ color: '#fff', fontSize: '1.2rem', fontWeight: 700, mb: 1, fontFamily: 'var(--font-heading)', textAlign: 'left' }}>
                     {item.title}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: 'var(--text-muted)', fontSize: '0.88rem', lineHeight: 1.6, mb: 3 }}>
+                  <Typography variant="body2" sx={{ color: 'var(--text-muted)', fontSize: '0.88rem', lineHeight: 1.6, mb: 3, textAlign: 'left' }}>
                     {item.desc}
                   </Typography>
                 </div>
@@ -129,6 +130,7 @@ const WhyChooseUs = () => {
                     px: 1,
                     width: 'fit-content',
                     mt: 'auto',
+                    alignSelf: 'flex-start',
                   }}
                 />
               </Paper>
