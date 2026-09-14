@@ -100,14 +100,16 @@ const WhyChooseUs = () => {
                 style={{ textAlign: 'left' }}
               >
                 <div>
-                  <span className="card-num absolute top-5 right-6 text-4xl font-extrabold text-amber-400/10 group-hover:text-amber-400/20 transition-colors font-serif">
-                    {item.num}
-                  </span>
-                  <div
-                    className="practice-icon w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mb-5 group-hover:bg-amber-500/20 group-hover:border-amber-400 transition-all shadow-lg shadow-amber-500/10"
-                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px' }}
-                  >
-                    {item.icon}
+                  <div className="flex items-center justify-between mb-5 w-full" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginBottom: '1.25rem' }}>
+                    <div
+                      className="practice-icon w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center group-hover:bg-amber-500/20 group-hover:border-amber-400 transition-all shadow-lg shadow-amber-500/10 flex-shrink-0"
+                      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px' }}
+                    >
+                      {item.icon}
+                    </div>
+                    <span className="card-num text-4xl font-extrabold text-amber-400/20 group-hover:text-amber-400/30 transition-colors font-serif leading-none">
+                      {item.num}
+                    </span>
                   </div>
                   <Typography variant="h6" component="h5" sx={{ color: '#fff', fontSize: '1.2rem', fontWeight: 700, mb: 1, fontFamily: 'var(--font-heading)', textAlign: 'left' }}>
                     {item.title}
