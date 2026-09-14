@@ -272,32 +272,40 @@ header {
 .hero-badge {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     background: rgba(212, 175, 55, 0.1);
     border: 1px solid rgba(212, 175, 55, 0.35);
     color: var(--gold-accent);
-    padding: 8px 18px;
+    padding: 8px 16px;
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
+    max-width: 100%;
+    white-space: normal;
+    word-break: break-word;
+    box-sizing: border-box;
 }
 
 .hero-headline {
     font-family: var(--font-heading);
-    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+    font-size: clamp(2rem, 4.2vw, 3.8rem);
     font-weight: 700;
-    line-height: 1.15;
+    line-height: 1.18;
     color: #fff;
     margin-bottom: 1.25rem;
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .hero-headline span {
     background: var(--gold-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    display: inline;
 }
 
 .hero-description {
@@ -305,6 +313,9 @@ header {
     color: var(--text-muted);
     margin-bottom: 2.2rem;
     max-width: 620px;
+    width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .hero-actions {
@@ -325,16 +336,22 @@ header {
 .btn-call {
     background: var(--gold-gradient);
     color: #080d1a;
-    padding: 14px 32px;
+    padding: 14px 28px;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.95rem;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     box-shadow: 0 4px 20px var(--gold-glow);
     transition: all 0.3s ease;
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    box-sizing: border-box;
+    word-break: break-word;
 }
 
 .btn-call:hover {
@@ -345,16 +362,21 @@ header {
 .btn-whatsapp {
     background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
     color: #fff;
-    padding: 14px 32px;
+    padding: 14px 28px;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.95rem;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
     transition: all 0.3s ease;
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .btn-whatsapp:hover {
