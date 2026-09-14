@@ -4,10 +4,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import AdvocateBandLogo from './AdvocateBandLogo';
 import BalanceIcon from '@mui/icons-material/Balance';
 import GavelIcon from '@mui/icons-material/Gavel';
-import LanguageIcon from '@mui/icons-material/Language';
+import LanguageSwitcher from './common/LanguageSwitcher';
+import GoldButton from './common/GoldButton';
 
 const DisclaimerModal = () => {
-  const { lang, setLang, t } = useLanguage();
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -46,7 +47,7 @@ const DisclaimerModal = () => {
             <div className="absolute -top-32 -left-32 w-64 h-64 bg-amber-500/15 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute -bottom-32 -right-32 w-64 h-64 bg-amber-400/10 rounded-full blur-[100px] pointer-events-none" />
 
-            {/* Top Bar: Brand Logo & Integrated Language Switcher */}
+            {/* Top Bar: Brand Logo & Reusable Language Switcher */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3.5 pt-2 pb-5 px-2 border-b border-amber-500/20 relative z-10">
               <div className="flex items-center gap-3">
                 <div className="flex-shrink-0 p-2 rounded-xl bg-amber-500/10 border border-amber-500/30 shadow-inner">
@@ -62,32 +63,8 @@ const DisclaimerModal = () => {
                 </div>
               </div>
 
-              {/* Sleek Pill Language Switcher */}
-              <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-full bg-slate-950/90 border border-amber-500/30 shadow-lg backdrop-blur-md justify-center mx-auto sm:mx-0">
-                <span className="text-amber-400 font-medium text-[11px] px-1.5 hidden md:inline-flex items-center gap-1">
-                  <LanguageIcon sx={{ fontSize: '0.9rem' }} />
-                </span>
-                {[
-                  { code: 'ta', label: 'தமிழ்' },
-                  { code: 'en', label: 'English' },
-                  { code: 'hi', label: 'हिंदी' },
-                  { code: 'te', label: 'తెలుగు' },
-                  { code: 'ml', label: 'മലയാളം' },
-                ].map((item) => (
-                  <button
-                    key={item.code}
-                    type="button"
-                    onClick={() => setLang(item.code)}
-                    className={`px-3 py-1 text-[11px] sm:text-xs font-bold rounded-full transition-all duration-300 ${
-                      lang === item.code
-                        ? 'bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-600 text-slate-950 shadow-md shadow-amber-500/40 font-extrabold scale-105'
-                        : 'text-slate-300 hover:text-amber-300 hover:bg-white/10'
-                    }`}
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
+              {/* Reusable Language Switcher */}
+              <LanguageSwitcher className="mx-auto sm:mx-0" />
             </div>
 
             {/* Modal Content Body */}
@@ -108,17 +85,11 @@ const DisclaimerModal = () => {
               </div>
             </div>
 
-            {/* Action Accept Button - Generous Bottom Padding (40px+ clearance) */}
+            {/* Reusable Gold Action Accept Button */}
             <div className="pt-3 pb-6 sm:pb-8 md:pb-10 px-4 flex justify-center w-full relative z-10">
-              <motion.button
-                whileHover={{ scale: 1.03, boxShadow: '0 10px 30px rgba(212, 175, 55, 0.4)' }}
-                whileTap={{ scale: 0.97 }}
-                onClick={handleAccept}
-                className="w-auto px-8 sm:px-12 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-600 text-slate-950 font-black text-xs sm:text-sm tracking-[2px] uppercase shadow-2xl shadow-amber-500/30 transition-all duration-300 flex items-center justify-center gap-2.5 border border-amber-200/50 cursor-pointer"
-              >
-                <GavelIcon sx={{ fontSize: '1.15rem' }} />
-                <span>{t('disclaimerBtn')}</span>
-              </motion.button>
+              <GoldButton onClick={handleAccept} icon={GavelIcon}>
+                {t('disclaimerBtn')}
+              </GoldButton>
             </div>
           </motion.div>
         </div>
@@ -128,3 +99,4 @@ const DisclaimerModal = () => {
 };
 
 export default DisclaimerModal;
+

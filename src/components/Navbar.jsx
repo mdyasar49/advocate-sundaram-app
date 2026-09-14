@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Button, IconButton, Box } from '@mui/material';
+import { IconButton, Box } from '@mui/material';
 import AdvocateBandLogo from './AdvocateBandLogo';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import TopBar from './TopBar';
+import LanguageSwitcher from './common/LanguageSwitcher';
+import GoldButton from './common/GoldButton';
 
 const Navbar = () => {
-  const { lang, setLang, t } = useLanguage();
+  const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -49,36 +51,16 @@ const Navbar = () => {
           <li><a href="#contact">{t('navContact')}</a></li>
         </ul>
 
-        {/* Desktop CTA Button */}
+        {/* Desktop Reusable CTA Button */}
         <Box className="desktop-cta">
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-            <Button
-              component="a"
-              href="https://wa.me/918838828632?text=Hello%20Advocate%20Sundaram%20Sir,%20I%20would%20like%20to%20consult%20regarding%20a%20legal%20matter."
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="contained"
-              startIcon={<WhatsAppIcon sx={{ fontSize: '1.2rem !important' }} />}
-              className="nav-cta-btn"
-              sx={{
-                background: 'var(--gold-gradient)',
-                color: '#080d1a',
-                fontWeight: 700,
-                borderRadius: '50px',
-                px: 3,
-                py: 1,
-                textTransform: 'none',
-                fontSize: '0.9rem',
-                boxShadow: '0 4px 20px var(--gold-glow)',
-                '&:hover': {
-                  background: 'var(--gold-gradient)',
-                  boxShadow: '0 6px 25px rgba(212, 175, 55, 0.5)',
-                },
-              }}
-            >
-              {t('navCta')}
-            </Button>
-          </motion.div>
+          <GoldButton
+            href="https://wa.me/918838828632?text=Hello%20Advocate%20Sundaram%20Sir,%20I%20would%20like%20to%20consult%20regarding%20a%20legal%20matter."
+            target="_blank"
+            icon={WhatsAppIcon}
+            size="sm"
+          >
+            {t('navCta')}
+          </GoldButton>
         </Box>
 
         {/* Mobile Hamburger Toggle Button */}
@@ -115,60 +97,25 @@ const Navbar = () => {
                 <li><a href="#courts" onClick={closeMobileMenu}>{t('navCourts')}</a></li>
                 <li><a href="#contact" onClick={closeMobileMenu}>{t('navContact')}</a></li>
               </ul>
-              <Button
-                component="a"
-                href="https://wa.me/918838828632?text=Hello%20Advocate%20Sundaram%20Sir,%20I%20would%20like%20to%20consult%20regarding%20a%20legal%20matter."
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="contained"
-                startIcon={<WhatsAppIcon sx={{ fontSize: '1.2rem !important' }} />}
-                onClick={closeMobileMenu}
-                sx={{
-                  width: '100%',
-                  mt: 2,
-                  mb: 1,
-                  background: 'var(--gold-gradient)',
-                  color: '#080d1a',
-                  fontWeight: 700,
-                  borderRadius: '30px',
-                  py: 1.3,
-                  fontSize: '0.95rem',
-                  boxShadow: '0 4px 20px var(--gold-glow)',
-                }}
-              >
-                {t('navCta')}
-              </Button>
 
-              {/* Mobile Menu 5-Language Switcher */}
-              <div className="mobile-lang-box mt-4 pt-3 border-t border-amber-500/20">
-                <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider block mb-2 text-center">
+              <div className="mt-3 mb-2">
+                <GoldButton
+                  href="https://wa.me/918838828632?text=Hello%20Advocate%20Sundaram%20Sir,%20I%20would%20like%20to%20consult%20regarding%20a%20legal%20matter."
+                  target="_blank"
+                  icon={WhatsAppIcon}
+                  fullWidth
+                  onClick={closeMobileMenu}
+                >
+                  {t('navCta')}
+                </GoldButton>
+              </div>
+
+              {/* Reusable Mobile Language Switcher */}
+              <div className="mobile-lang-box mt-4 pt-3 border-t border-amber-500/20 text-center">
+                <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider block mb-2">
                   🌐 Select Language / மொழியைத் தேர்வு செய்க
                 </span>
-                <div className="flex flex-wrap items-center justify-center gap-1.5 p-1.5 rounded-2xl bg-slate-900/90 border border-amber-500/30">
-                  {[
-                    { code: 'ta', label: 'தமிழ்' },
-                    { code: 'en', label: 'English' },
-                    { code: 'hi', label: 'हिंदी' },
-                    { code: 'te', label: 'తెలుగు' },
-                    { code: 'ml', label: 'മലയാളം' },
-                  ].map((item) => (
-                    <button
-                      key={item.code}
-                      type="button"
-                      onClick={() => {
-                        setLang(item.code);
-                        closeMobileMenu();
-                      }}
-                      className={`px-3 py-1.5 text-xs font-bold rounded-xl transition-all duration-200 ${
-                        lang === item.code
-                          ? 'bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-600 text-slate-950 shadow-md shadow-amber-500/30 font-extrabold scale-105'
-                          : 'text-slate-300 hover:text-amber-400 hover:bg-white/10'
-                      }`}
-                    >
-                      {item.label}
-                    </button>
-                  ))}
-                </div>
+                <LanguageSwitcher onSelect={closeMobileMenu} showLabel={false} />
               </div>
             </div>
           </motion.div>
@@ -179,3 +126,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
-import { Box, Card, CardContent, Typography, Dialog, DialogTitle, DialogContent, DialogActions, Button, Chip, Stack } from '@mui/material';
+import { Box, CardContent, Typography, Dialog, DialogTitle, DialogContent, DialogActions, Button, Stack } from '@mui/material';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import GavelIcon from '@mui/icons-material/Gavel';
 import DescriptionIcon from '@mui/icons-material/Description';
@@ -11,6 +11,8 @@ import BalanceIcon from '@mui/icons-material/Balance';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CloseIcon from '@mui/icons-material/Close';
+import SectionHeader from './common/SectionHeader';
+import GlassCard from './common/GlassCard';
 
 const PracticeAreas = () => {
   const { t } = useLanguage();
@@ -27,27 +29,8 @@ const PracticeAreas = () => {
 
   return (
     <Box className="section-padding container relative" id="practices">
-      <div
-        className="section-header text-center mb-12 flex flex-col items-center justify-center mx-auto w-full"
-        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}
-      >
-        <Chip
-          label={t('tagPractices')}
-          sx={{
-            background: 'rgba(212, 175, 55, 0.12)',
-            color: 'var(--gold-accent)',
-            border: '1px solid rgba(212, 175, 55, 0.3)',
-            fontWeight: 700,
-            fontSize: '0.78rem',
-            letterSpacing: '1.5px',
-            mb: 1.5,
-            mx: 'auto',
-          }}
-        />
-        <h3 className="section-title text-3xl md:text-4xl font-extrabold text-white font-serif text-center w-full" style={{ textAlign: 'center' }}>
-          {t('titlePractices')}
-        </h3>
-      </div>
+      {/* Reusable Section Header */}
+      <SectionHeader tag={t('tagPractices')} title={t('titlePractices')} />
 
       <div className="practice-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {practices.map((item, idx) => (
@@ -57,20 +40,17 @@ const PracticeAreas = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: idx * 0.08 }}
-            whileHover={{ y: -8 }}
-            onClick={() => setSelectedPractice(item)}
-            className="cursor-pointer"
+            className="h-full"
           >
-            <Card
-              className="practice-card group relative h-full flex flex-col justify-between backdrop-blur-xl border border-amber-500/20 bg-slate-900/80 rounded-2xl p-6 transition-all duration-300 hover:border-amber-400 hover:shadow-2xl hover:shadow-amber-500/20"
+            {/* Reusable GlassCard Component */}
+            <GlassCard
+              onClick={() => setSelectedPractice(item)}
+              className="group relative h-full flex flex-col justify-between"
             >
               <CardContent sx={{ p: 0, '&:last-child': { pb: 0 } }} className="h-full flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between mb-5 w-full" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginBottom: '1.25rem' }}>
-                    <div
-                      className="practice-icon w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center group-hover:bg-amber-500/20 group-hover:border-amber-400 transition-all shadow-lg shadow-amber-500/10 flex-shrink-0"
-                      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '56px', height: '56px' }}
-                    >
+                  <div className="flex items-center justify-between mb-5 w-full">
+                    <div className="practice-icon w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center group-hover:bg-amber-500/20 group-hover:border-amber-400 transition-all shadow-lg shadow-amber-500/10 flex-shrink-0">
                       {item.icon}
                     </div>
                     <span className="card-num text-4xl font-extrabold text-amber-400/20 group-hover:text-amber-400/30 transition-colors font-serif leading-none">
@@ -90,7 +70,7 @@ const PracticeAreas = () => {
                   <ArrowForwardIcon sx={{ fontSize: '1rem', transition: 'transform 0.2s', className: 'group-hover:translate-x-1' }} />
                 </Stack>
               </CardContent>
-            </Card>
+            </GlassCard>
           </motion.div>
         ))}
       </div>
