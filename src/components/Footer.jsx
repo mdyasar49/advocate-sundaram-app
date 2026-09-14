@@ -11,7 +11,7 @@ import MapIcon from '@mui/icons-material/Map';
 import ExploreIcon from '@mui/icons-material/Explore';
 
 const Footer = () => {
-  const { t } = useLanguage();
+  const { lang, setLang, t } = useLanguage();
   const [activeMap, setActiveMap] = React.useState('office');
 
   return (
@@ -26,14 +26,33 @@ const Footer = () => {
               {t('footerAbout')}
             </p>
 
-            {/* Language Translate Selector */}
-            <div className="footer-lang-box">
-              <span className="lang-box-label">
+            {/* Native 5-Language Selector */}
+            <div className="footer-lang-box mt-4">
+              <span className="lang-box-label mb-2 flex items-center text-xs font-bold text-amber-400 uppercase tracking-wider">
                 <LanguageIcon sx={{ fontSize: '1.1rem', verticalAlign: 'middle', marginRight: '6px', color: 'var(--gold-accent)' }} />
-                All Languages:
+                Select Language / மொழியைத் தேர்வு செய்க:
               </span>
-              <div className="lang-select-wrapper">
-                <div id="google_translate_element"></div>
+              <div className="flex flex-wrap gap-1.5 p-1 rounded-2xl bg-amber-500/10 border border-amber-500/30">
+                {[
+                  { code: 'ta', label: '🇮🇳 தமிழ்' },
+                  { code: 'en', label: '🇬🇧 English' },
+                  { code: 'hi', label: '🇮🇳 हिंदी' },
+                  { code: 'te', label: '🇮🇳 తెలుగు' },
+                  { code: 'ml', label: '🇮🇳 മലയാളം' },
+                ].map((item) => (
+                  <button
+                    key={item.code}
+                    type="button"
+                    onClick={() => setLang(item.code)}
+                    className={`px-2.5 py-1 text-xs font-bold rounded-xl transition-all ${
+                      lang === item.code
+                        ? 'bg-amber-400 text-slate-950 shadow-md shadow-amber-500/30'
+                        : 'text-slate-300 hover:text-amber-400 hover:bg-white/5'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                ))}
               </div>
             </div>
           </div>

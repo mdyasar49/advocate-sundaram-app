@@ -22,43 +22,34 @@ const TopBar = () => {
         </motion.div>
 
         <motion.div className="contact-quick" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-          {/* MUI Language Toggle Button Group */}
+          {/* MUI 5-Language Native Selector */}
           <Stack direction="row" spacing={0.5} sx={{ background: 'rgba(212, 175, 55, 0.12)', border: '1px solid var(--gold-accent)', borderRadius: '20px', p: '2px' }}>
-            <Button
-              size="small"
-              onClick={toggleLanguage}
-              className={`lang-btn ${lang === 'en' ? 'active' : ''}`}
-              sx={{
-                minWidth: 'auto',
-                px: 1.5,
-                py: 0.2,
-                fontSize: '0.75rem',
-                fontWeight: 700,
-                borderRadius: '16px',
-                color: lang === 'en' ? '#080d1a' : 'var(--text-muted)',
-                background: lang === 'en' ? 'var(--gold-gradient)' : 'transparent',
-                textTransform: 'none',
-              }}
-            >
-              🇬🇧 ENG
-            </Button>
-            <Button
-              size="small"
-              onClick={toggleLanguage}
-              sx={{
-                minWidth: 'auto',
-                px: 1.5,
-                py: 0.2,
-                fontSize: '0.75rem',
-                fontWeight: 700,
-                borderRadius: '16px',
-                color: lang === 'ta' ? '#080d1a' : 'var(--text-muted)',
-                background: lang === 'ta' ? 'var(--gold-gradient)' : 'transparent',
-                textTransform: 'none',
-              }}
-            >
-              🇮🇳 தமிழ்
-            </Button>
+            {[
+              { code: 'ta', label: 'தமிழ்' },
+              { code: 'en', label: 'ENG' },
+              { code: 'hi', label: 'हिंदी' },
+              { code: 'te', label: 'తెలుగు' },
+              { code: 'ml', label: 'മലയാളം' },
+            ].map((item) => (
+              <Button
+                key={item.code}
+                size="small"
+                onClick={() => setLang(item.code)}
+                sx={{
+                  minWidth: 'auto',
+                  px: 1.2,
+                  py: 0.2,
+                  fontSize: '0.72rem',
+                  fontWeight: 700,
+                  borderRadius: '16px',
+                  color: lang === item.code ? '#080d1a' : 'var(--text-muted)',
+                  background: lang === item.code ? 'var(--gold-gradient)' : 'transparent',
+                  textTransform: 'none',
+                }}
+              >
+                {item.label}
+              </Button>
+            ))}
           </Stack>
 
           <Button
