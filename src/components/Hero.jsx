@@ -14,7 +14,6 @@ import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 
 const Hero = () => {
   const { lang, t } = useLanguage();
-  const [kuralLangTab, setKuralLangTab] = React.useState('ta');
 
   return (
     <section className="hero" style={{ position: 'relative', overflow: 'hidden', width: '100%' }}>
@@ -133,53 +132,13 @@ const Hero = () => {
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexWrap: 'wrap', maxWidth: '100%' }}>
                 <BalanceIcon sx={{ color: 'var(--gold-accent)', fontSize: '1.2rem', flexShrink: 0 }} />
                 <Typography variant="subtitle2" sx={{ color: 'var(--gold-accent)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', wordBreak: 'break-word', maxWidth: '100%' }}>
-                  திருக்குறள் (குறள் 118: நடுவுநிலைமை / Justice)
+                  {lang === 'ta' ? 'திருக்குறள் (குறள் 118: நடுவுநிலைமை / Justice)' : 'Thirukkural (Kural 118: Justice & Impartiality)'}
                 </Typography>
               </Box>
-              <Chip
-                icon={<BalanceIcon style={{ color: 'var(--gold-accent)', fontSize: '0.9rem' }} />}
-                label="⚖️ 5 Languages"
-                size="small"
-                sx={{
-                  background: 'rgba(212,175,55,0.15)',
-                  color: 'var(--gold-accent)',
-                  border: '1px solid rgba(212,175,55,0.3)',
-                  fontWeight: 600,
-                  fontSize: '0.75rem',
-                }}
-              />
             </div>
 
-            {/* Language Selector MUI Chips for Thirukkural */}
-            <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap sx={{ mb: 1.5, maxWidth: '100%' }}>
-              {[
-                { id: 'ta', label: '🇮🇳 தமிழ்' },
-                { id: 'en', label: '🇬🇧 English' },
-                { id: 'hi', label: '🇮🇳 हिंदी' },
-                { id: 'te', label: '🇮🇳 తెలుగు' },
-                { id: 'ml', label: '🇮🇳 മലയാളം' },
-              ].map((kuralLang) => (
-                <Chip
-                  key={kuralLang.id}
-                  label={kuralLang.label}
-                  clickable
-                  onClick={() => setKuralLangTab(kuralLang.id)}
-                  sx={{
-                    background: kuralLangTab === kuralLang.id ? 'var(--gold-accent)' : 'rgba(255, 255, 255, 0.06)',
-                    color: kuralLangTab === kuralLang.id ? '#080d1a' : '#cbd5e1',
-                    border: '1px solid ' + (kuralLangTab === kuralLang.id ? 'var(--gold-accent)' : 'rgba(255, 255, 255, 0.15)'),
-                    fontWeight: 700,
-                    fontSize: '0.75rem',
-                    '&:hover': {
-                      background: kuralLangTab === kuralLang.id ? 'var(--gold-accent)' : 'rgba(212, 175, 55, 0.2)',
-                    },
-                  }}
-                />
-              ))}
-            </Stack>
-
-            {/* Kural Content based on selected tab */}
-            {kuralLangTab === 'ta' && (
+            {/* Kural Content synced directly with global website language */}
+            {lang === 'ta' && (
               <>
                 <p className="kural-verse-text" style={{ fontFamily: '"Mukta Malar", serif', fontSize: '1.05rem', color: '#fff', fontWeight: 600, fontStyle: 'italic', lineHeight: 1.5, marginBottom: '6px', wordBreak: 'break-word' }}>
                   "சமன்செய்து சீர்தூக்கும் கோல்போல் அமைந்தொருபால்<br />
@@ -191,7 +150,7 @@ const Hero = () => {
               </>
             )}
 
-            {kuralLangTab === 'en' && (
+            {lang === 'en' && (
               <>
                 <p className="kural-verse-text" style={{ fontSize: '0.98rem', color: '#fff', fontWeight: 600, fontStyle: 'italic', lineHeight: 1.5, marginBottom: '6px', wordBreak: 'break-word' }}>
                   "To stand like a balanced scale, uncurved by favor or prejudice, is the true ornament of the wise."
@@ -202,7 +161,7 @@ const Hero = () => {
               </>
             )}
 
-            {kuralLangTab === 'hi' && (
+            {lang === 'hi' && (
               <>
                 <p className="kural-verse-text" style={{ fontSize: '0.98rem', color: '#fff', fontWeight: 600, fontStyle: 'italic', lineHeight: 1.5, marginBottom: '6px', wordBreak: 'break-word' }}>
                   "समान रूप से तौलने वाले तराजू की भांति, किसी एक ओर झुके बिना निष्पक्ष रहना ही ज्ञानियों का आभूषण है।"
@@ -213,7 +172,7 @@ const Hero = () => {
               </>
             )}
 
-            {kuralLangTab === 'te' && (
+            {lang === 'te' && (
               <>
                 <p className="kural-verse-text" style={{ fontSize: '0.98rem', color: '#fff', fontWeight: 600, fontStyle: 'italic', lineHeight: 1.5, marginBottom: '6px', wordBreak: 'break-word' }}>
                   "త్రాసువలె సమంగా తూచి, ఏ పక్కకీ తలవంచకుండా నిష్పాక్షికంగా ఉండటమే ప్రాజ్ఞులకు అలంకారం."
@@ -224,7 +183,7 @@ const Hero = () => {
               </>
             )}
 
-            {kuralLangTab === 'ml' && (
+            {lang === 'ml' && (
               <>
                 <p className="kural-verse-text" style={{ fontSize: '0.98rem', color: '#fff', fontWeight: 600, fontStyle: 'italic', lineHeight: 1.5, marginBottom: '6px', wordBreak: 'break-word' }}>
                   "തുലാസ്സുപോലെ സമമായി തൂക്കി, ഒരു വശത്തേക്കും ചായാതെ നിഷ്പക്ഷമായി നിലകൊള്ളുന്നതാണ് വിവേകികളുടെ അലങ്കാരം."
