@@ -33,83 +33,90 @@ const DisclaimerModal = () => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[999999] flex items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-xl overflow-y-auto">
+        <div className="fixed inset-0 z-[999999] flex items-center justify-center p-4 sm:p-8 bg-black/90 backdrop-blur-xl overflow-y-auto">
           {/* Modal Container */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.94, y: 15 }}
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.94, y: 15 }}
-            transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="w-full max-w-lg sm:max-w-2xl bg-[#0b101d] border border-amber-500/40 rounded-3xl p-5 sm:p-8 shadow-[0_25px_80px_rgba(0,0,0,0.95),0_0_30px_rgba(212,175,55,0.15)] relative flex flex-col my-auto"
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full max-w-xl sm:max-w-2xl md:max-w-3xl bg-gradient-to-b from-[#0e1628] via-[#090e1a] to-[#04060c] border border-amber-500/35 rounded-3xl sm:rounded-[2.5rem] p-6 sm:p-10 md:p-12 shadow-[0_30px_100px_rgba(0,0,0,0.95),0_0_50px_rgba(212,175,55,0.18)] relative flex flex-col my-auto"
           >
-            {/* Ambient Background Glows */}
-            <div className="absolute -top-28 -left-28 w-56 h-56 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-28 -right-28 w-56 h-56 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
+            {/* Ambient Luxury Background Glows */}
+            <div className="absolute -top-32 -left-32 w-64 h-64 bg-amber-500/15 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute -bottom-32 -right-32 w-64 h-64 bg-amber-400/10 rounded-full blur-[100px] pointer-events-none" />
 
-            {/* Header: Brand & Logo */}
-            <div className="flex items-center gap-4 pb-4 border-b border-amber-500/20">
-              <div className="flex-shrink-0 p-2.5 rounded-2xl bg-amber-500/10 border border-amber-500/30">
-                <AdvocateBandLogo size={38} />
+            {/* Top Bar: Brand Logo & Integrated Language Switcher */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-amber-500/20 relative z-10">
+              <div className="flex items-center gap-3.5">
+                <div className="flex-shrink-0 p-2.5 rounded-2xl bg-amber-500/10 border border-amber-500/30 shadow-inner">
+                  <AdvocateBandLogo size={36} />
+                </div>
+                <div>
+                  <h2 className="text-base sm:text-lg font-bold tracking-wider text-amber-300 font-serif uppercase">
+                    {t('brandTitle')}
+                  </h2>
+                  <p className="text-[10px] sm:text-xs font-semibold text-slate-400 tracking-widest uppercase mt-0.5">
+                    ADVOCATES & LEGAL CONSULTANTS
+                  </p>
+                </div>
               </div>
-              <div className="min-w-0 flex-1">
-                <h2 className="text-base sm:text-xl font-bold tracking-wider text-amber-300 font-serif uppercase truncate">
-                  {t('brandTitle')}
-                </h2>
-                <p className="text-[10px] sm:text-xs font-semibold text-slate-400 tracking-widest uppercase mt-0.5">
-                  ADVOCATES & LEGAL CONSULTANTS
-                </p>
+
+              {/* Sleek Pill Language Switcher */}
+              <div className="flex items-center gap-1.5 p-1.5 rounded-full bg-slate-950/80 border border-amber-500/30 shadow-lg backdrop-blur-md self-stretch sm:self-auto justify-center">
+                <span className="text-amber-400 font-medium text-xs px-2 hidden md:inline-flex items-center gap-1">
+                  <LanguageIcon sx={{ fontSize: '1rem' }} />
+                </span>
+                {[
+                  { code: 'ta', label: 'தமிழ்' },
+                  { code: 'en', label: 'English' },
+                  { code: 'hi', label: 'हिंदी' },
+                  { code: 'te', label: 'తెలుగు' },
+                  { code: 'ml', label: 'മലയാളം' },
+                ].map((item) => (
+                  <button
+                    key={item.code}
+                    type="button"
+                    onClick={() => setLang(item.code)}
+                    className={`px-3 py-1.5 text-xs font-bold rounded-full transition-all duration-300 ${
+                      lang === item.code
+                        ? 'bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-600 text-slate-950 shadow-md shadow-amber-500/40 font-extrabold scale-105'
+                        : 'text-slate-300 hover:text-amber-300 hover:bg-white/10'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                ))}
               </div>
             </div>
 
-            {/* 5-Language Switcher Bar */}
-            <div className="my-4 p-2 rounded-2xl bg-slate-950/90 border border-amber-500/25 flex flex-wrap items-center justify-center gap-1.5 shadow-md">
-              <span className="text-amber-400 font-bold text-[11px] uppercase tracking-wider px-2 flex items-center gap-1">
-                <LanguageIcon sx={{ fontSize: '0.95rem' }} /> Language:
-              </span>
-              {[
-                { code: 'ta', label: 'தமிழ்' },
-                { code: 'en', label: 'English' },
-                { code: 'hi', label: 'हिंदी' },
-                { code: 'te', label: 'తెలుగు' },
-                { code: 'ml', label: 'മലയാളം' },
-              ].map((item) => (
-                <button
-                  key={item.code}
-                  type="button"
-                  onClick={() => setLang(item.code)}
-                  className={`px-3 py-1 text-xs font-bold rounded-xl transition-all duration-200 ${
-                    lang === item.code
-                      ? 'bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-600 text-slate-950 shadow-md shadow-amber-500/30 font-extrabold scale-105'
-                      : 'text-slate-300 hover:text-amber-300 hover:bg-white/10'
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
+            {/* Modal Content Body */}
+            <div className="py-6 sm:py-8 relative z-10">
+              {/* Modal Title with Gold Accent */}
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/25">
+                  <BalanceIcon sx={{ fontSize: '1.5rem' }} />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold font-serif bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500 tracking-wide">
+                  {t('disclaimerTitle')}
+                </h3>
+              </div>
+
+              {/* Text Body - Soft Glowing Glass Panel */}
+              <div className="bg-slate-950/60 border-l-4 border-amber-400/80 border-y border-r border-amber-500/15 rounded-2xl p-5 sm:p-7 text-slate-200 text-xs sm:text-sm md:text-base leading-relaxed sm:leading-loose font-sans shadow-2xl tracking-wide">
+                <p className="text-slate-200 font-normal">{t('disclaimerText')}</p>
+              </div>
             </div>
 
-            {/* Modal Title */}
-            <div className="flex items-center gap-2.5 mb-2.5">
-              <BalanceIcon sx={{ color: 'var(--gold-accent)', fontSize: '1.4rem' }} />
-              <h3 className="text-lg sm:text-2xl font-bold font-serif text-amber-400">
-                {t('disclaimerTitle')}
-              </h3>
-            </div>
-
-            {/* Text Body Container - Auto Height, No Scrollbar */}
-            <div className="bg-slate-950/90 border border-amber-500/20 rounded-2xl p-4 sm:p-6 my-2 text-slate-200 text-xs sm:text-sm leading-relaxed sm:leading-loose font-sans shadow-inner tracking-wide">
-              <p>{t('disclaimerText')}</p>
-            </div>
-
-            {/* Action Accept Button Container */}
-            <div className="pt-4 flex justify-center w-full">
+            {/* Action Accept Button - Spacious Centered Pill */}
+            <div className="pt-2 pb-2 flex justify-center w-full relative z-10">
               <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: 1.03, boxShadow: '0 10px 30px rgba(212, 175, 55, 0.4)' }}
+                whileTap={{ scale: 0.97 }}
                 onClick={handleAccept}
-                className="w-full sm:w-auto px-10 py-3.5 rounded-2xl bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-600 text-slate-950 font-extrabold text-xs sm:text-sm tracking-[2px] uppercase shadow-xl shadow-amber-500/30 hover:shadow-amber-500/50 transition-all duration-300 flex items-center justify-center gap-2.5 border border-amber-300/40 cursor-pointer"
+                className="w-full sm:w-auto px-10 sm:px-14 py-4 rounded-full bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-600 text-slate-950 font-black text-xs sm:text-sm tracking-[2.5px] uppercase shadow-2xl shadow-amber-500/30 transition-all duration-300 flex items-center justify-center gap-3 border border-amber-200/50 cursor-pointer"
               >
-                <GavelIcon sx={{ fontSize: '1.2rem' }} />
+                <GavelIcon sx={{ fontSize: '1.25rem' }} />
                 <span>{t('disclaimerBtn')}</span>
               </motion.button>
             </div>
