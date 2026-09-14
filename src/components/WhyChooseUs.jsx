@@ -21,7 +21,7 @@ const WhyChooseUs = () => {
   return (
     <Box className="section-padding about-section relative overflow-hidden" id="courts">
       <div className="container relative z-10">
-        <div className="section-header text-center mb-12">
+        <div className="section-header text-center mb-12 flex flex-col items-center justify-center">
           <Chip
             label={t('tagPillars')}
             sx={{
@@ -34,14 +34,14 @@ const WhyChooseUs = () => {
               mb: 1.5,
             }}
           />
-          <h3 className="section-title text-3xl md:text-4xl font-extrabold text-white font-serif mb-4">{t('titlePillars')}</h3>
+          <h3 className="section-title text-3xl md:text-4xl font-extrabold text-white font-serif mb-3 text-center">{t('titlePillars')}</h3>
 
-          <Stack direction="row" justifyContent="center" alignItems="center" spacing={1} sx={{ mt: 2 }}>
+          <Box className="flex flex-wrap items-center justify-center gap-2 mt-1 w-full text-center">
             <Rating value={5} readOnly precision={0.5} emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />} />
-            <Typography variant="body2" sx={{ color: 'var(--gold-accent)', fontWeight: 700, fontSize: '0.9rem' }}>
+            <Typography variant="body2" sx={{ color: 'var(--gold-accent)', fontWeight: 700, fontSize: '0.9rem', display: 'inline-block' }}>
               5.0 / 5.0 Rating by Trichy Clients
             </Typography>
-          </Stack>
+          </Box>
         </div>
 
         <div className="pillars-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

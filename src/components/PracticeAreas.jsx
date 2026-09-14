@@ -27,7 +27,7 @@ const PracticeAreas = () => {
 
   return (
     <Box className="section-padding container relative" id="practices">
-      <div className="section-header text-center mb-12">
+      <div className="section-header text-center mb-12 flex flex-col items-center justify-center mx-auto">
         <Chip
           label={t('tagPractices')}
           sx={{
