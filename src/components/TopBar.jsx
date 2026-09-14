@@ -1,13 +1,14 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
-import { Box, Button, Chip, Stack, Typography } from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import BalanceIcon from '@mui/icons-material/Balance';
 import PhoneIcon from '@mui/icons-material/Phone';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import LanguageSwitcher from './common/LanguageSwitcher';
 
 const TopBar = () => {
-  const { lang, setLang, toggleLanguage, t } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <Box className="top-bar hidden xl:block">
@@ -22,35 +23,8 @@ const TopBar = () => {
         </motion.div>
 
         <motion.div className="contact-quick flex flex-wrap items-center gap-3 justify-center" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-          {/* MUI 5-Language Native Selector */}
-          <Stack direction="row" spacing={0.5} sx={{ background: 'rgba(212, 175, 55, 0.12)', border: '1px solid var(--gold-accent)', borderRadius: '20px', p: '2px' }}>
-            {[
-              { code: 'ta', label: 'தமிழ்' },
-              { code: 'en', label: 'ENG' },
-              { code: 'hi', label: 'हिंदी' },
-              { code: 'te', label: 'తెలుగు' },
-              { code: 'ml', label: 'മലയാളം' },
-            ].map((item) => (
-              <Button
-                key={item.code}
-                size="small"
-                onClick={() => setLang(item.code)}
-                sx={{
-                  minWidth: 'auto',
-                  px: 1.2,
-                  py: 0.2,
-                  fontSize: '0.72rem',
-                  fontWeight: 700,
-                  borderRadius: '16px',
-                  color: lang === item.code ? '#080d1a' : 'var(--text-muted)',
-                  background: lang === item.code ? 'var(--gold-gradient)' : 'transparent',
-                  textTransform: 'none',
-                }}
-              >
-                {item.label}
-              </Button>
-            ))}
-          </Stack>
+          {/* Reusable 5-Language Switcher Component */}
+          <LanguageSwitcher size="sm" />
 
           <Button
             href="tel:+918838828632"

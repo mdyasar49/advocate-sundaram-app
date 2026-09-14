@@ -10,7 +10,16 @@ export const LANGUAGES = [
   { code: 'ml', label: 'മലയാളം' },
 ];
 
-const LanguageSwitcher = ({ variant = 'pill', onSelect, showLabel = true, className = '' }) => {
+/**
+ * Single authoritative LanguageSwitcher component for the entire app.
+ * Guarantees 100% design consistency across TopBar, Mobile Menu, and Popups.
+ */
+const LanguageSwitcher = ({
+  onSelect,
+  showLabel = false,
+  className = '',
+  size = 'md', // 'sm' | 'md'
+}) => {
   const { lang, setLang } = useLanguage();
 
   const handleSelect = (code) => {
@@ -18,29 +27,36 @@ const LanguageSwitcher = ({ variant = 'pill', onSelect, showLabel = true, classN
     if (onSelect) onSelect(code);
   };
 
+  const isSmall = size === 'sm';
+
   return (
     <div
-      className={`flex flex-wrap items-center gap-1.5 p-1.5 rounded-full bg-slate-950/90 border border-amber-500/30 shadow-lg backdrop-blur-md justify-center ${className}`}
+      className={`inline-flex flex-wrap items-center gap-1 p-1 rounded-full bg-[#121110]/95 border border-[#3b3222] shadow-lg backdrop-blur-md justify-center ${className}`}
     >
       {showLabel && (
-        <span className="text-amber-400 font-medium text-[11px] px-1.5 hidden md:inline-flex items-center gap-1">
-          <LanguageIcon sx={{ fontSize: '0.9rem' }} />
+        <span className="text-amber-400 font-medium text-xs px-2 hidden sm:inline-flex items-center gap-1">
+          <LanguageIcon sx={{ fontSize: '1rem' }} />
         </span>
       )}
-      {LANGUAGES.map((item) => (
-        <button
-          key={item.code}
-          type="button"
-          onClick={() => handleSelect(item.code)}
-          className={`px-3 py-1 text-[11px] sm:text-xs font-bold rounded-full transition-all duration-300 ${
-            lang === item.code
-              ? 'bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-600 text-slate-950 shadow-md shadow-amber-500/40 font-extrabold scale-105'
-              : 'text-slate-300 hover:text-amber-300 hover:bg-white/10'
-          }`}
-        >
-          {item.label}
-        </button>
-      ))}
+      {LANGUAGES.map((item) => {
+        const isActive = lang === item.code;
+        return (
+          <button
+            key={item.code}
+            type="button"
+            onClick={() => handleSelect(item.code)}
+            className={`px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-bold rounded-full transition-all duration-200 cursor-pointer ${
+              isSmall ? 'px-2 py-0.5 text-[10px] sm:text-[11px]' : ''
+            } ${
+              isActive
+                ? 'bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-black shadow-[0_2px_10px_rgba(212,175,55,0.4)] font-extrabold scale-105'
+                : 'text-[#a8a49c] hover:text-[#f3efe6] hover:bg-white/5'
+            }`}
+          >
+            {item.label}
+          </button>
+        );
+      })}
     </div>
   );
 };

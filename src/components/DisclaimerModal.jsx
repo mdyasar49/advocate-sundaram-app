@@ -37,7 +37,7 @@ const DisclaimerModal = () => {
       title={t('brandTitle')}
       subtitle="ADVOCATES & LEGAL CONSULTANTS"
       badgeTag={t('disclaimerTag')}
-      headerRight={<LanguageSwitcher className="bg-[#121212]/90 border-[#383020]" />}
+      headerRight={<LanguageSwitcher size="sm" />}
       actions={
         <div className="flex justify-start w-full pt-2">
           <motion.button
